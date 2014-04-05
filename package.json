@@ -1,0 +1,20 @@
+{
+  "name": "echo",
+  "description": "echo() exercise",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/advanced-js/echo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/advanced-js/echo/issues"
+  },
+  "homepage": "https://github.com/advanced-js/echo",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-html-validation": "^0.1.15"
+  }
+}
