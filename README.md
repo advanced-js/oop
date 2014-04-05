@@ -13,7 +13,7 @@ countdown(10);
 // ...
 ```
 
-## Breakdown
+## Levels
 
 1. Use global variable to keep track of time
 1. Keep track of time *without* defining any global variables
