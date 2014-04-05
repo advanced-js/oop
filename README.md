@@ -1,26 +1,24 @@
-# Countdown exercise
+# Echo() exercise
 
-Make a kitchen timer.  Write a countdown() function that takes a number of seconds, and prints each second counting down to zero.
+Print out each argument to the `echo()` function on a new line.
 
 ```javascript
-countdown(10);
+function echo(/* args */){
+  // ...
+}
 
+echo();
+// should print nothing
+
+echo('bla');
 // should print
+//
+// 'bla'
 
-// 10...
-// 9...
-// 8...
-// ...
+echo('foo', 'bar', 'baz');
+// should print
+//
+// 'foo'
+// 'bar'
+// 'baz'
 ```
-
-## Levels
-
-1. Use global variable to keep track of time
-1. Keep track of time *without* defining any global variables
-1. BONUS: don't define any new variables
-
-## Documentation
-
-* [`setTimeout()`]( https://developer.mozilla.org/en-US/docs/DOM/window.setTimeout)
-* [`setInterval()`](https://developer.mozilla.org/en-US/docs/DOM/window.setInterval)
-* [`clearInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/window.clearInterval)
