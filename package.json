@@ -1,17 +1,17 @@
 {
-  "name": "echo",
-  "description": "echo() exercise",
+  "name": "mashup",
+  "description": "mashup project",
   "scripts": {
     "test": "grunt"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/advanced-js/echo.git"
+    "url": "https://github.com/advanced-js/mashup.git"
   },
   "bugs": {
-    "url": "https://github.com/advanced-js/echo/issues"
+    "url": "https://github.com/advanced-js/mashup/issues"
   },
-  "homepage": "https://github.com/advanced-js/echo",
+  "homepage": "https://github.com/advanced-js/mashup",
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-contrib-jshint": "^0.10.0",
