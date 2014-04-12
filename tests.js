@@ -8,7 +8,7 @@ test("test Class", function() {
 	areaTest(new Circle(50));
 });
 
-//Test and instance of the Circle class and its area
+//Test an instance of the Circle class and its area
 test("test area of instance", function() {
 	var circleTest = new Circle(50);
 	deepEqual(circleTest.getArea(), (3.14 * Math.pow(circleTest.radius, 2)), "Area passed" );
