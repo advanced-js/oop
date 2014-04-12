@@ -1,1 +1,4 @@
-// var Circle = ...
+var Circle = function(radius) {
+    // circle stuff
+};
+
