@@ -7,3 +7,6 @@ var Circle = function(radius){
 }; 
 
 var circle1 = new Circle(1); 
+
+console.log('The radius of circle1 is ' + circle1.radius);
+console.log('The area of circle1 is ' + circle1.area());
