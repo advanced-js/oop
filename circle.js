@@ -1,4 +1,4 @@
 var Circle = function(radius) {
-    // circle stuff
+    this.radius = radius;
 };
 
