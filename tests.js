@@ -3,3 +3,8 @@ test("hello test", function() {
 });
 
 // ADD TESTS HERE
+test("circle test", function() {
+	var circle = new Circle(1);
+	deepEqual(circle.radius, 1, "radius passed");
+	deepEqual(circle.getArea(), Math.PI, "getArea passed");
+});
