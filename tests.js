@@ -1,11 +1,20 @@
 //Test Class and its properties
 test("test Class", function() {
+	//Test the property radius is returned correctly
+	function propertyTest(circle){
+		deepEqual(circle.radius, radius, "Radius passed" );
+	};
+
 	//Test the area method
-	function areaTest(then){
-		deepEqual(then.getArea(), (3.14 * Math.pow(then.radius, 2)), "Area passed" );
+	function areaTest(circle){
+		deepEqual(circle.getArea(), (3.14 * Math.pow(circle.radius, 2)), "Area passed" );
 	};
 	
-	areaTest(new Circle(50));
+	var radius = 50;
+	var circleTest = new Circle(radius);
+
+	propertyTest(circleTest);
+	areaTest(circleTest);
 });
 
 //Test an instance of the Circle class and its area
