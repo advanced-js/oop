@@ -3,12 +3,12 @@ test("test Class", function() {
 	//Test the property radius is returned correctly
 	function propertyTest(circle){
 		deepEqual(circle.radius, radius, "Radius passed" );
-	};
+	}
 
 	//Test the area method
 	function areaTest(circle){
 		deepEqual(circle.getArea(), (3.14 * Math.pow(circle.radius, 2)), "Area passed" );
-	};
+	}
 	
 	var radius = 50;
 	var circleTest = new Circle(radius);
