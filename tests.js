@@ -5,7 +5,7 @@ test("property read", function() {
 
 test("property set", function() {
   var circle = new Circle(2);
-  circle.radius = 5
+  circle.radius = 5;
   ok(circle.radius === 5, "correct");
 });
 
