@@ -1,10 +1,18 @@
 # Object Oriented Programming exercise
 
-Make a `Circle` class with `radius` property and `getArea()` method, and add tests using [QUnit](https://qunitjs.com/).  The [qunit-assert-close](https://github.com/advanced-js/qunit-assert-close) library will come in handy, which has been included.  Unfortunately [their syntax examples are a bit different than those recommended on the QUnit site](https://github.com/JamesMGreene/qunit-assert-close/issues/3), so it can be used like so:
+## V1
 
-```javascript
-test("close() test", function() {
-  var val = 1.205;
-  close(val, 1.2, 0.01, "actual is close to expected");
-});
-```
+Make a base `SuperHero` class. Give it some properties, and actions (methods) that change those properties.
+
+1. Write a test for what it should do in [tests.js](tests.js).
+1. Open [index.html](index.html) to run the tests.
+1. Define the class in [super_hero.js](super_hero.js), and make the tests pass.
+1. Repeat from step 1.
+
+## V2
+
+Make 2+ `SuperHero` subclasses that have two or special properties and actions.
+
+## V3
+
+Make at least one of the methods interact with another `SuperHero`, such as `attack()` or `giveMotivationalSpeech()`.
