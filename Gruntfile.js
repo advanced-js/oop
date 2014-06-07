@@ -5,6 +5,9 @@ module.exports = function(grunt) {
         src: ['*.js']
       }
     },
+    qunit: {
+      all: ['index.html']
+    },
     validation: {
       options: {
         reset: true
@@ -16,7 +19,8 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-html-validation');
 
-  grunt.registerTask('default', ['jshint', 'validation']);
+  grunt.registerTask('default', ['jshint', 'qunit', 'validation']);
 };
