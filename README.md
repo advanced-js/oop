@@ -11,8 +11,8 @@ Make a base `SuperHero` class. Give it some properties, and actions (methods) th
 
 ## V2
 
-Make 2+ `SuperHero` subclasses that have two or special properties and actions.
+Make at least one of the methods interact with another `SuperHero`, such as `attack()` or `giveMotivationalSpeech()`.
 
 ## V3
 
-Make at least one of the methods interact with another `SuperHero`, such as `attack()` or `giveMotivationalSpeech()`.
+Make 2+ `SuperHero` subclasses that have two or special properties and actions, with tests.
