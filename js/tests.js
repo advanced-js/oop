@@ -5,7 +5,7 @@ test("Superman Test", function() {
 	
 	equal(typeof sm, "object", "Superman is a Object");
 	equal(sm instanceof SuperHero, true, "Superman is an instanceof SuperHero");
-	equal(sm.health, undefined, "private props inaccessable.");	//equal(sm.superfriends, undefined, "private props inaccessable.");
+	equal(sm.health, undefined, "private props inaccessable.");	
 
 	equal(sm.name, "Superman", "Superman's name is 'Superman'");
 	equal(sm.getHealth(), 100, "Health starts at 100");
@@ -20,7 +20,7 @@ test("Superman befriends Captain Anonymous", function() {
 	
 	equal(typeof ca, "object", "Captain Anonymous is a Object");
 	equal(ca instanceof SuperHero, true, "Superman is an instanceof SuperHero");
-	equal(ca.health, undefined, "private props inaccessable.");	//equal(ca.superfriends, undefined, "private props inaccessable.");
+	equal(ca.health, undefined, "private props inaccessable.");
 
 	equal(ca.name, "Captain Anonymous", "Captain Anonymous's name is 'Captain Anonymous'");
 	equal(ca.getHealth(), 100, "Health starts at 100");
@@ -38,52 +38,33 @@ test("Superman befriends Captain Anonymous", function() {
 
 });
 
+test("Aquaman Test", function() {
+	var am = new AquaMan();
+	
+	equal(typeof am, "object", "Aquaman is a Object");
+	equal(am instanceof SuperHero, true, "Aquaman is an instanceof SuperHero");
+	equal(am.health, undefined, "private props inaccessable.");	
 
+	equal(am.name, "Aquaman", "Aquaman's name is 'Aquaman'");
+	equal(am.getHealth(), 100, "Health starts at 100");
+	equal(am.addHealth(-1), 99, "Health increment / decrement.");
+	equal(am.addHealth(1), 100, "Health increment / decrement.");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-test("sm", function() {
-	equal(typeof(sm), "object", "Superman is a Object");
-});
-test("sm.name", function() {
-	equal(sm.name, undefined, "name if private");
+	equal(am.speakToSeaCreatures(), "Look, I'm speaking to sea creatures with my mind! Freaky!!!", "Aquaman speaks to sea creatures.")
 });
 
-test("sm.getName()", function() {
-	equal(sm.getName(), "Superman", "Superman is named 'Superman'");
-});
-test("ww.getName()", function() {
-	equal(ww.getName(), "Captain Anonymous", "Wonder Woman is a 'Captain Anonymous'");
+test("Wonder Twins Test", function() {
+	var wt = new WonderTwins();
+	
+	equal(typeof wt, "object", "Wonder Twins is a Object");
+	equal(wt instanceof SuperHero, true, "Wonder Twins is an instanceof SuperHero");
+	equal(wt.health, undefined, "private props inaccessable.");	
+
+	equal(wt.name, "Wonder Twins", "Wonder Twins's name is 'Wonder Twins'");
+	equal(wt.getHealth(), 100, "Health starts at 100");
+	equal(wt.addHealth(-1), 99, "Health increment / decrement.");
+	equal(wt.addHealth(1), 100, "Health increment / decrement.");
+
+	equal(wt.wonderTwinPowersActivate(), "Shape of an eagle! Form of a bucket of water!", "Wonder Twins activate their powers.")
 });
 
-test("sm.getHealth()", function() {
-	equal(sm.getHealth(), 100, "Health starts at 100");
-});
-
-
-test("sm.doTeamwork(ww)", function() {
-	equal(sm.doTeamwork(ww), "Let's work together, Captain Anonymous");
-});
-
-// ADD TESTS HERE
-*/
