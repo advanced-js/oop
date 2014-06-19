@@ -16,7 +16,20 @@ function getNewBatman (toughness, strength) {
 		toughness: toughness || 170,
 		strength: strength || 20
 	});	
-};
+}
+
+function getNewMagicHero () {
+	return new MagicHero ();
+}
+
+function getNewAlienHero () {
+	return new AlienHero ();
+}
+
+var mh = getNewMagicHero();
+var ah = getNewAlienHero();
+
+console.log(ah)
 
 test('Superman initialization', function() {
 	var s = getNewSuperman();
