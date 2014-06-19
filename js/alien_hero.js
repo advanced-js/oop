@@ -32,14 +32,14 @@ AlienHero.prototype.alienAttack = function (superhero) {
 
 AlienHero.prototype.alienHighFive = function (superhero) {
 	if (this.state !== 4 && superhero.state !== 4) {
-		this.power += 2;
-		this.defense += 2;
-		this.toughness += 11;
+		this.power += 1;
+		this.defense += 1;
+		this.toughness += 10;
 		this.strength -= 5; // Saps alien of 5 strength
 
-		superhero.power += 2;
-		superhero.defense += 2;
-		superhero.toughness += 11;
+		superhero.power += 1;
+		superhero.defense += 1;
+		superhero.toughness += 10;
 		superhero.strength += 10; // Gives superhero more strength than usual
 
 		return true;
