@@ -26,7 +26,9 @@ function getNewMagicHero () {
 }
 
 function getNewAlienHero () {
-	return new AlienHero ('Alien Sally');
+	return new AlienHero ({
+		name: 'Alien Sally'
+	});
 }
 
 test('Superman initialization', function() {

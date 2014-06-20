@@ -1,5 +1,5 @@
-var AlienHero = function (name) {
-	this.name = name;
+var AlienHero = function (params) {
+	this.name = params.name;
 };
 
 AlienHero.prototype = new SuperHero({
