@@ -1,6 +1,7 @@
-//var SuperHero = function(name,heightInCms,weightInKgs,strength,toughness,speed,stamina)
-var stretch = new SuperHero('Mr. Stretch',220,90,40,90,100,110);
-var brick = new SuperHero('Brickhouse',190,150,120,100,20,50);
+//var SuperHero = function(name,heightInCms,weightInKgs,strength,toughness,speed,stamina,health)
+var stretch = new SuperHero('Mr. Stretch',220,90,40,90,100,110,100);
+var brick = new SuperHero('Brickhouse',190,150,120,100,20,50,100);
+
 
 test("Test Mr. Stretch",function(){
 //test the basic properties	
@@ -13,24 +14,30 @@ test("Test Mr. Stretch",function(){
 	ok(stretch.stamina===110,"Yep, "+stretch.name+" has stamina of 110");
 });
 
-test("Test the fortify power",function(){
-//test fortify
+test("Test a fight",function(){
+	stretch.attack(brick,15);
+	ok(stretch.stamina===95,"Yep, stamina went down 15");
+	ok(brick.health===85,"Yep, health went down 15");
+})
+
+QUnit.asyncTest("Test the fortify power (and asynchronous test)", function(){
 	stretch.fortify();
+
 	ok(stretch.strength===20,stretch.name+"'s strength has been halved!")
 	ok(stretch.toughness===180,stretch.name+"'s toughness has been doubled!")
 	ok(stretch.expPoints===2,stretch.name+"'s experience points went up by 2!")
-	//can't get the one below to work
-	//ok(stretch.stamina===100,stretch.name+"'s stamina went down by 10 points!")
-	console.log("Waiting for stats to return to normal");
-	/*setTimeout(function(){
-		ok(stretch.stamina===102,stretch.name+"'s stamina went up 2 points in 10 seconds")
-	},1000);
-	setTimeout(function(){
-		ok(stretch.stamina===110,stretch.name+"'s stamina is back to normal")
-	},4000);*/
+	ok(stretch.stamina===90,stretch.name+"'s stamina went down by 10 points!")
+	setTimeout(function() {
+		ok(stretch.stamina===92,stretch.name+"'s stamina went up 2 points in 10 seconds");
+    	QUnit.start();
+  	}, 10000);
 });
-setTimeout(function(){
-	test("Test restore after fortify",function(){
-		ok(stretch.strength===40,stretch.name+" is back to full strength!")
-		ok(stretch.toughness===90,stretch.name+"'s toughness is back to normal!")
-	}),10000});
+test("Test level up",function(){
+	stretch.levelUp();
+	ok(stretch.level===2,"Level up to 2");
+	ok(stretch.expPoints === 0,"Experience points back down to 0");
+	ok(stretch.strength === 42,"Strength increased to 42");
+	ok(stretch.toughness === 92,"toughness increased to 92");
+	ok(stretch.speed === 102,"speed increased to 92");
+	ok(stretch.stamina === 112,"stamina increased to 92");
+})
