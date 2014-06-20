@@ -19,17 +19,15 @@ function getNewBatman (toughness, strength) {
 }
 
 function getNewMagicHero () {
-	return new MagicHero ();
+	return new MagicHero ({
+		name: 'Magic Bob',
+		magic: 15
+	});
 }
 
 function getNewAlienHero () {
-	return new AlienHero ();
+	return new AlienHero ('Alien Sally');
 }
-
-var mh = getNewMagicHero();
-var ah = getNewAlienHero();
-
-console.log(ah)
 
 test('Superman initialization', function() {
 	var s = getNewSuperman();
@@ -143,4 +141,59 @@ test('Superheros high five (one dead)', function () {
 
 	ok(b.state === 4, 'Superman attacks Batman, Batman\'s state is now: ' + states[b.state]);
 	ok(s.highFive(b) === false, 'Superman and Batman cannot high five because Batman is dead. Bummer.');
+});
+
+/* SUBCLASS TESTS */
+
+test('MagicHero subclass initialization', function () {
+	var m = getNewMagicHero();
+
+	ok(m.name === 'Magic Bob', 'Name initialized to ' + m.name);
+	ok(m.power === 10, 'Power initialized to ' + m.power);
+	ok(m.defense === 7, 'Defense initialized to ' + m.defense);
+	ok(m.toughness === 170, 'Toughness initialized to ' + m.toughness);
+	ok(m.strength === 0, 'Strength initialized to ' + m.strength);
+	ok(m.magic === 15, 'Magic initialized to ' + m.magic);
+});
+
+test('AlienHero subclass initialization', function () {
+	var a = getNewAlienHero();
+
+	ok(a.name === 'Alien Sally', 'Name initialized to ' + a.name);
+	ok(a.power === 7, 'Power initialized to ' + a.power);
+	ok(a.defense === 9, 'Defense initialized to ' + a.defense);
+	ok(a.toughness === 170, 'Toughness initialized to ' + a.toughness);
+	ok(a.strength === 30, 'Strength initialized to ' + a.strength);
+});
+
+test('MagicHero attacks AlienHero with magic', function () {
+	var m = getNewMagicHero(),
+		a = getNewAlienHero();
+
+	ok(m.state === 0, 'MagicHero is not attacking, state is: ' + states[m.state]);
+
+	ok(m.magicAttack(a) === true, 'MagicHero attacks AlienHero with magic!');
+	ok(m.state === 1, 'MagicHero\'s state set correctly to: ' + states[m.state]);
+
+	// AlienHero toughness: 170 - ((3*10) + 9) = 131
+	ok(a.toughness === 131, 'AlienHero\'s toughness reduced correctly: ' + a.toughness);
+
+	// MagicHero's magic: 15 - 3 = 12
+	ok(m.magic === 12, 'MagicHero\'s magic reduced correctly: ' + m.magic);
+});
+
+test('AlienHero attacks MagicHero with alien strength', function () {
+	var m = getNewMagicHero(),
+		a = getNewAlienHero();
+
+	ok(a.state === 0, 'AlienHero is not attacking, state is: ' + states[a.state]);
+
+	ok(a.alienAttack(m) === true, 'AlienHero attacks MagicHero with alien strength!');
+	ok(a.state === 1, 'AlienHero\'s state set correctly to: ' + states[a.state]);
+
+	// MagicHero's toughness: 170 - ((1 * 7) + 7) = 156
+	ok(m.toughness === 156, 'MagicHero\'s toughness reduced correctly: ' + m.toughness);
+
+	// AlienHero's strength: 30 - 1 = 29
+	ok(a.strength === 29, 'AlienHero\'s magic reduced correctly: ' + a.strength);
 });

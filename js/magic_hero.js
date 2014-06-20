@@ -1,19 +1,21 @@
-var MagicHero = function () {};
+var MagicHero = function (params) {
+	this.name = params.name;
+	this.magic = params.magic;
+};
 
 MagicHero.prototype = new SuperHero({
-	name: 'Magic Hero',
 	power: 10, // Stronger power
 	defense: 7, // Lower defense
  	toughness: 170, // Average toughness
-	strength: 20 // Average strength
+	strength: 0 // Average strength
 });
 
-// Slightly stronger than a normal attack, also slightly more expensive
+// Slightly stronger than a normal attack, uses magic instead of strength
 MagicHero.prototype.magicAttack = function (superhero) {
-	if (this.strength >= 3) {
+	if (this.magic >= 3) {
 		this.state = 1;
 		superhero.toughness -= (3 * this.power) + superhero.getDefense(); // 3 * power, instead of 2 * power
-		this.strength -= 3; // uses 3 strength instead of 2
+		this.magic -= 3; // uses magic instead of strength
 
 		if (superhero.toughness <= 0) {
 			superhero.state = 4;
@@ -23,7 +25,7 @@ MagicHero.prototype.magicAttack = function (superhero) {
 		return true;
 
 	} else {
-		console.log(this.name + ' doesn\'t have enough strength left!');
+		console.log(this.name + ' doesn\'t have enough magic left!');
 		return false;
 	}
 };

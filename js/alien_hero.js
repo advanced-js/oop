@@ -1,7 +1,8 @@
-var AlienHero = function () {};
+var AlienHero = function (name) {
+	this.name = name;
+};
 
 AlienHero.prototype = new SuperHero({
-	name: 'Alien Hero',
 	power: 7, // Much weaker attack
 	defense: 9, // Higher defense
 	toughness: 170, // Average toughness
