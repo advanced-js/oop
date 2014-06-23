@@ -5,6 +5,6 @@ test("Use Ability", function () {
 });
 
 //Tests when SuperHeroes are hit or injured, they lose strength
-test("Is Hit", function () {
-    ok(SuperHero.prototype.getsHit, this.strength -= 5);
+test("Attacked by another SuperHero", function () {
+    ok(SuperHero.prototype.attacked, this.strength -= 10);
 });

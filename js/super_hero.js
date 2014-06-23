@@ -4,11 +4,6 @@ var SuperHero = function (name) {
     this.name = name;
     this.strength = 100;
     this.ability;
-
-    //Class Method
-    this.getInfo = function () {
-        alert(this.name + ' is able to ' + this.ability + ' and has strength of ' + this.strength + '%');
-    }
 };
 
 //New Instances
@@ -27,10 +22,17 @@ SuperHero.prototype.useAbility = function () {
 }
 
 //Instance Method
-SuperHero.prototype.getsHit = function () {
+SuperHero.prototype.attacked = function () {
+    this.strength -= 10;
+}
+
+//Instance Method
+SuperHero.prototype.attacks = function (SuperHero2)
+{
     this.strength -= 5;
+    SuperHero2.attacked();
 }
 
 //Function Calls
-clark.useAbility();
-helen.getInfo();
+clark.attacks(tony);
+alert("Superman's strength is: " + clark.strength + " Ironman's strength is: " + tony.strength);
