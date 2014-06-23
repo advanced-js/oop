@@ -1,38 +1,84 @@
-//SuperHero Class
-var SuperHero = function (name) {
-    //properties
-    this.name = name;
-    this.strength = 100;
-    this.ability;
+//SuperClass
+var SuperHero = function(){
+    this.strength = 100;                                    //properties
 };
 
-//New Instances
-var tony = new SuperHero('IronMan');
-tony.ability = "build weapons";
+SuperHero.prototype.ability = function () {                 //Method 1: returns ability
+    return undefined;
+};
 
-var clark = new SuperHero('SuperMan');
-clark.ability = "fly";
+SuperHero.prototype.type = function () {                    //Method 2: returns type
+    return undefined;
+};
 
-var helen = new SuperHero('ElastiGirl');
-helen.ability = "stretch";
+SuperHero.prototype.vulnerability = function () {           //Method 3: returns vulnerability
+    return undefined;
+};
 
-//Instance Method
-SuperHero.prototype.useAbility = function () {
-    this.strength += 10;
-}
+ 
+//SuperMan Subclass function
+var SuperMan = function () { };
+SuperMan.prototype = new SuperHero();
 
-//Instance Method
-SuperHero.prototype.attacked = function () {
-    this.strength -= 10;
-}
+SuperMan.prototype.ability = function () {
+    return "Super Strength";
+};
 
-//Instance Method
-SuperHero.prototype.attacks = function (SuperHero2)
-{
-    this.strength -= 5;
-    SuperHero2.attacked();
-}
+SuperMan.prototype.type = function () {
+    return "Alien";
+};
 
-//Function Calls
-clark.attacks(tony);
-alert("Superman's strength is: " + clark.strength + " Ironman's strength is: " + tony.strength);
+SuperMan.prototype.vulnerability = function () {
+    return "Kryptonite";
+};
+
+SuperMan.kryptonized = function () {
+    this.strength = 1;                                      //Kryptonite gravely reduces SuperMan's strength
+};
+
+var SuperGirl = new SuperMan();
+
+//IronMan Subclass function
+var IronMan = function () { };
+IronMan.prototype = new SuperHero();
+IronMan.prototype.ability = function () {
+    return "Technologically Savvy with an array of weapons";
+};
+
+IronMan.prototype.type = function () {
+    return "Human";
+};
+
+IronMan.prototype.vulnerability = function () {
+    return "Weak Heart";
+};
+
+IronMan.artificialHeartFailure = function () {
+    this.strength = 1;                                      //Artificial Heart Failure gravely reduces IronMan's strength (unless he immediately replaces it)
+};
+
+var WarMachine = new IronMan();
+
+//Hulk Subclass function
+var Hulk = function () { };
+Hulk.prototype = new SuperHero();
+Hulk.prototype.ability = function () {
+    return "Bio-engineered Weapon";
+};
+
+Hulk.prototype.type = function () {
+    return "Genetically engineered being";
+};
+
+Hulk.prototype.vulnerability = function () {
+    return "Human form";
+};
+
+Hulk.brutallyAttackedInHumanForm = function () {
+    this.strength = 1;                                      //Brutally attacking Hulk will reduce his strength, though he may regenerate easily as Hulk
+};
+
+var SheHulk = new Hulk();
+
+//mySuperHero Superclass function
+var mySuperHero = new SuperHero();
