@@ -1,5 +1,5 @@
 QUnit.test("hello test", function(assert) {
-  assert.ok(1 + 1 === 2, "Passed!");
+  assert.strictEqual(1 + 1, 2, "One plus one is two");
 });
 
 // ADD TESTS HERE
