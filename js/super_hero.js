@@ -5,7 +5,7 @@ function SuperHero( hero_name, strength ) {
   this.health = 100;
 }
 
-//Add an attack function to the SuperHero Class
+//Add an attack method to the SuperHero Class
 SuperHero.prototype.attack = function( defender ) {
   console.log( this.hero_name + ' attacked ' + defender.hero_name + ' with ' + this.strength + ' power');
   defender.health -= this.strength;
