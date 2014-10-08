@@ -3,6 +3,7 @@ var SuperHero = function() {
     this.superPower = '';
     this.kryptonite = '';
     this.peopleSaved = 0;
+    this.health = 100;
 
 
     this.getAge = function() {
@@ -11,7 +12,11 @@ var SuperHero = function() {
 
     this.setAge = function(age) {
         this.age = age;
-    }
+    };
+
+    this.getHealth = function() {
+        return this.health;
+    };
 
     this.getSuperPower = function() {
         return this.superPower;
@@ -29,5 +34,8 @@ var SuperHero = function() {
         return this.peopleSaved;
     };
 
+    this.attack = function(superHero) {
+        superHero.health--;
+    };
 
 };
