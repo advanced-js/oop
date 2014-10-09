@@ -11,12 +11,13 @@ QUnit.test('set age test', function(assert){
     spiderman.setAge(30);
     assert.strictEqual(30, spiderman.getAge(), 'age should update');
 });
+QUnit.test('get age test', function(assert){
+    var ironMan = new SuperHero();
+   assert.strictEqual(20, ironMan.getAge(), 'should return age');
+});
 QUnit.test('attack test', function(assert){
     var batman = new SuperHero();
     var joker = new SuperHero();
     batman.attack(joker);
     assert.strictEqual(99, joker.getHealth(), 'attack should decrease health');
 });
-
-
-// ADD TESTS HERE
