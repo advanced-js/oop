@@ -35,4 +35,3 @@ test("Superman motivates Batman", function() {
   // assertion
   equal(speech, "Don't be such a pansy, Batman! You have to protect Gotham!!");
 });
-

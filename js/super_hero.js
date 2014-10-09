@@ -1,8 +1,6 @@
 var SuperHero = function(name, city) {
 	this.name = name;
 	this.city = city;
-
-	return this.name + ' protects ' + this.city;
 }
 
 SuperHero.prototype.disguise = function(alias) {
@@ -14,5 +12,5 @@ SuperHero.prototype.fight = function(enemy) {
 }
 
 SuperHero.prototype.motivate = function(friend) {
-	return("Don't be such a pansy, " + friend.name + "! You have to protect " + friend.city + "!!");
+	return ("Don't be such a pansy, " + friend.name + "! You have to protect " + friend.city + "!!");
 }
