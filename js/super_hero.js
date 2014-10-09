@@ -11,7 +11,8 @@ var SuperHero = function (name, human) {
     console.log('* ' + self.name + ' delivers a super punch to ' + target.name + '!! *');
     if (target.lifeForce >= 10) {
       target.lifeForce -= 10;
-      console.log(target.name + ' says: "Damn you, ' + self.name + ', my life force is now only ' + target.lifeForce + '! But I can\'t be thwarted that easily!"');
+      var targetMission = (target.mission ? ' to ' + target.mission + ' ' : '');
+      console.log(target.name + ' says: "Damn you, ' + self.name + ', my life force is now only ' + target.lifeForce + '! But my mission' + targetMission + 'can\'t be thwarted that easily!"');
     } else {
       target.alive = false;
       self.powerUp(50);
@@ -35,10 +36,18 @@ var SuperHero = function (name, human) {
   }
 }
 
+
+/* Let's go! */
+
+var SuperVillain = function (name, human, mission) {
+  var self = this;
+  SuperHero.call(this, name, human);
+  self.mission = mission;
+}
+
 var superMan = new SuperHero('superman', false );
 
-var doctorEvil = new SuperHero('doctorevil', true);
-console.debug(superMan);
+var doctorEvil = new SuperVillain('doctorevil', true, 'take over the world');
 
 superMan.superPunch(doctorEvil);
 superMan.superPunch(doctorEvil);
