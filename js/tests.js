@@ -3,14 +3,25 @@ QUnit.test("hello test", function(assert) {
 });
 
 // ADD TESTS HERE
+
+//TEST FOR A FEW OF THE GUARDIANS OF THE GALAXY SUPER HERO NAMES
 QUnit.test("SuperHero Name Drax", function(assert) {
-  assert.equal(drax.hero_name, 'drax', "Drax Name is Drax");
+  assert.strictEqual(drax.hero_name, 'drax', "Drax Name is Drax");
 });
 
 QUnit.test("SuperHero Name Gamora", function(assert) {
-  assert.equal(gamora.hero_name, 'gamora', "Gamora Name is Gamora");
+  assert.strictEqual(gamora.hero_name, 'gamora', "Gamora Name is Gamora");
 });
 
 QUnit.test("SuperHero Name Groot", function(assert) {
-  assert.equal(groot.hero_name, 'groot', "Drax Name is Groot");
+  assert.strictEqual(groot.hero_name, 'groot', "Drax Name is Groot");
+});
+
+//TEST THE X MEN CLAN FUNCTION
+QUnit.test("SuperHero Name Groot", function(assert) {
+  assert.strictEqual(wolverine.getClan(), 'xmen', "Wolverine is in the xmen clan");
+});
+
+QUnit.test("SuperHero Name Groot", function(assert) {
+  assert.strictEqual(rogue.getClan(), 'xmen', "Rogue is in the xmen clan");
 });
