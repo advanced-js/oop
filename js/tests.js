@@ -18,10 +18,10 @@ QUnit.test("SuperHero Name Groot", function(assert) {
 });
 
 //TEST THE X MEN CLAN FUNCTION
-QUnit.test("SuperHero Name Groot", function(assert) {
+QUnit.test("X Men Wolverine Clan Test", function(assert) {
   assert.strictEqual(wolverine.getClan(), 'xmen', "Wolverine is in the xmen clan");
 });
 
-QUnit.test("SuperHero Name Groot", function(assert) {
+QUnit.test("X Men Rogue Clan Test", function(assert) {
   assert.strictEqual(rogue.getClan(), 'xmen', "Rogue is in the xmen clan");
 });
