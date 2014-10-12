@@ -12,7 +12,7 @@ var SuperHero = function SuperHero(name, move, lives, numAttacks) {
     console.log(target.name + ' now has ' + target.lives + ' lives!');
     target.numAttacks -=1;
     console.log(this.name + ' now has ' + target.numAttacks + ' attacks!');
-  }
+  };
 };
 
 
