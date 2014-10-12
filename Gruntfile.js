@@ -2,7 +2,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
       files: {
-        src: ['*.js']
+        src: [
+          '**/*.js',
+          '!node_modules/**/*'
+        ]
       }
     },
     qunit: {
