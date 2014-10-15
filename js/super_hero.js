@@ -5,17 +5,17 @@ var SuperHero = function(name){
   this.superShout = function(){
     return "I am Super " + this.name;
   };
-  
-  var Avengers = ["Thor", "Iron Man", "Captain America", "Hulk", "Black Widow", "Hawkeye"];
-  if (Avengers.indexOf(this.name) > -1){
-    this.isAvenger = true;
-  } else {
-    this.isAvenger = false;
-  }
-};
 
-var batman = new SuperHero("Batman");
-var thor = new SuperHero("Thor");
+  this.isAvenger = function(){
+    var Avengers = ["Thor", "Iron Man", "Captain America", "Hulk", "Black Widow", "Hawkeye"];
+    if (Avengers.indexOf(this.name) > -1){
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+};
 
 SuperHero.prototype.attack = function(victim, power){
   victim.health = victim.health - power;
@@ -25,3 +25,15 @@ SuperHero.prototype.attack = function(victim, power){
     return true;
   }
 };
+
+var Alien = function(planet){
+  this.planet = planet;
+}
+
+var Human = function(hometown){
+  this.hometown = hometown;
+  this.planet = "Earth";
+}
+
+Alien.prototype = new SuperHero();
+Human.prototype = new SuperHero();
