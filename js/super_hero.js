@@ -13,7 +13,7 @@ var SuperHero = function(name){
     } else {
       return false;
     }
-  }
+  };
   
 };
 
@@ -28,12 +28,12 @@ SuperHero.prototype.attack = function(victim, power){
 
 var Alien = function(planet){
   this.planet = planet;
-}
+};
 
 var Human = function(hometown){
   this.hometown = hometown;
   this.planet = "Earth";
-}
+};
 
 Alien.prototype = new SuperHero();
 Human.prototype = new SuperHero();
