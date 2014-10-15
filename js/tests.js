@@ -21,3 +21,20 @@ QUnit.test('attack test', function(assert){
     batman.attack(joker);
     assert.strictEqual(99, joker.getHealth(), 'attack should decrease health');
 });
+QUnit.test('heal test', function(assert){
+    var batman = new SuperHero();
+    var healMan = new HealerHero();
+    batman.attack(healMan);
+    assert.strictEqual(99, healMan.getHealth(), 'attack should decrease health');
+    healMan.heal();
+    assert.strictEqual(100, healMan.getHealth(), 'heal should restore health');
+});
+QUnit.test('destroy test', function(assert){
+    var batman = new SuperHero();
+    var joker = new SuperVillian();
+    batman.attack(joker);
+    assert.strictEqual(99, joker.getHealth(), 'attack should decrease health');
+    joker.destroy(8);
+    assert.strictEqual(-8, joker.getPeopleSaved(), 'heal should restore health');
+});
+
