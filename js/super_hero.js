@@ -24,5 +24,5 @@ SuperHero.prototype.giveMotivationalSpeech = function giveMotivationalSpeech(tar
 var batman = new SuperHero('Batman', 'being wealthy');
 var superman = new SuperHero('Superman', 'being an alien');
 
-batman.attack(superman);
-batman.giveMotivationalSpeech(superman);
+//batman.attack(superman);
+//batman.giveMotivationalSpeech(superman);
