@@ -34,6 +34,15 @@ oop.SuperHero = (function(heroName, power, level) {
 		return ++strengthLevel;
 	};
 
+	self.powerDown = function() {
+		return --strengthLevel;
+	};
+
+	self.attack = function(opponent) {
+		self.powerUp();
+		opponent.powerDown();
+	};
+
 	var setName = function(heroName) {
 		name = heroName;
 		return name;
