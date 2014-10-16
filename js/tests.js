@@ -26,4 +26,10 @@ QUnit.test("Test Attack", function(assert) {
   assert.strictEqual(aquaman.getStrength(), 2, "Aguaman strength increased");
 });
 
+var alienHero = new oop.SuperHero.Alien();
+var humanHero = new oop.SuperHero.Human();
 
+QUnit.test("Test SubClasses", function(assert) {
+  assert.strictEqual(alienHero.isAlien(), true, "Is an Alien");
+  assert.strictEqual(humanHero.isAlien(), false, "Not an Alien");
+});

@@ -63,3 +63,25 @@ oop.SuperHero = (function(heroName, power, level) {
 	return self;
 
 });
+
+oop.SuperHero.Alien = (function(heroName, power, level){
+	var isAlien = true;
+	var self = new oop.SuperHero(heroName, power, level);
+
+	self.isAlien = function() {
+		return isAlien;
+	}
+
+	return self;
+});
+
+oop.SuperHero.Human = (function(heroName, power, level){
+	var isAlien = false;
+	var self = new oop.SuperHero(heroName, power, level);
+
+	self.isAlien = function() {
+		return isAlien;
+	}
+
+	return self;
+});
