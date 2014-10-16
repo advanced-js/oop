@@ -4,7 +4,7 @@ var oop = window.oop || {};
 oop.SuperHero = (function(heroName, power, level) {
 	var self = {};
 	var name,
-		power,
+		powerName,
 		strengthLevel;
 
 	var init = function(heroName, power, level) {
@@ -23,7 +23,7 @@ oop.SuperHero = (function(heroName, power, level) {
 	};
 
 	self.getPower = function() {
-		return power;
+		return powerName;
 	};
 
 	self.getStrength = function() {
@@ -49,8 +49,8 @@ oop.SuperHero = (function(heroName, power, level) {
 	};
 
 	var setPower = function(heroPower) {
-		power = heroPower;
-		return power;
+		powerName = heroPower;
+		return powerName;
 	};
 
 	var setStrength = function(level) {
