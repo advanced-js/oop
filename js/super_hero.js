@@ -70,7 +70,7 @@ oop.SuperHero.Alien = (function(heroName, power, level){
 
 	self.isAlien = function() {
 		return isAlien;
-	}
+	};
 
 	return self;
 });
@@ -81,7 +81,7 @@ oop.SuperHero.Human = (function(heroName, power, level){
 
 	self.isAlien = function() {
 		return isAlien;
-	}
+	};
 
 	return self;
 });
