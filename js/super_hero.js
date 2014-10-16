@@ -3,7 +3,7 @@ var SuperHero = function(name, profession, timeOfAction, outfit, coolness) {
   this.profession = profession;
   this.timeOfAction = timeOfAction;
   this.outfit = outfit;
-  this.coolness = coolness;
+  this.coolness = coolness || 0;
 };
 
 var Batman = new SuperHero('Batman', 'Rich guy', 'night', 'batsuit', 0);
@@ -60,9 +60,9 @@ SuperHero.prototype.compareOutfit = function compareOutfit(target) {
 Batman.compareCareers(Ironman);
 Batman.compareActivity(Ironman);
 Ironman.compareOutfit(Batman);
-
+console.log('');
 Batman.getCoolnessFactor(Batman);
 Ironman.getCoolnessFactor(Ironman);
-
+console.log('');
 Batman.theCoolest(Ironman);
 
