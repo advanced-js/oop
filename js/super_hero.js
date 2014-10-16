@@ -2,14 +2,14 @@ var SuperHero = function SuperHero()
 {
   this.dialog = [];
   this.talkIndex = 0;
-}
+};
 SuperHero.prototype.talks = function()
 {
   var saids = this.dialog[this.talkIndex];
   this.talkIndex++;
   console.log(saids);
   return saids;
-}
+};
 
 Cartman.prototype = new SuperHero();
 Cartman.prototype.constructor = Cartman;
