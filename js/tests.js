@@ -4,7 +4,7 @@ test("Superman becomes Clark Kent", function() {
   // action
   superman.disguise("Clark Kent");
   // assertion
-  equal(superman.alias, "Clark Kent");;
+  equal(superman.alias, "Clark Kent");
 });
 
 test("Batman becomes Bruce Wayne", function() {
@@ -13,7 +13,7 @@ test("Batman becomes Bruce Wayne", function() {
   // action
   batman.disguise("Bruce Wayne");
   // assertion
-  equal(batman.alias, "Bruce Wayne");;
+  equal(batman.alias, "Bruce Wayne");
 });
 
 test("Superman fights Batman", function() {
