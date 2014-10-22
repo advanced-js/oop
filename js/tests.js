@@ -4,10 +4,21 @@
 
 // ADD TESTS HERE
 
-test('superman.SuperHeroInfo()', function() {
+test('superhero info', function() {
 	equal(superman.name, "Superman", "Superhero Name");
-	equal(superman.birthPlace, "Crypton", "Superhero Name");
-	equal(line1, "Name: Superman</br>");
-	equal(line2, "Alias: Clark</br>")
-	equal(line3, "Birth Place: Crypton</br>")
+	equal(batman.name, "Batman", "Superhero Name");
+	
+});
+
+test('spiderman intro', function() {
+	equal(spiderman.introduce(spiderman.name), "Hello, I am Spiderman and I am here to save you!", "Spiderman Intro");
+});
+
+// 
+test('superman vs. lex luthor', function() {
+	equal(superman.fight(lexluthor), "Superman wins!", "Supehero fight")
+});
+
+test('superman vs. batman', function() {
+	equal(superman.fight(batman), "no fight!", "Supehero fight")
 });

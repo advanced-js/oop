@@ -1,34 +1,91 @@
-// var SuperHero = ...
 
 // object constructor
-var SuperHero = function(name,alias, power){
-	this.name = name;
-	this.alias = alias;
-	this.power = power;
-	this.SuperHeroInfo = SuperHeroInfo;
+
+function SuperHero(name, powers, nature, archenemy){
+  this.name  = name;
+  this.powers = powers;
+  this.nature = nature;
+  this.archenemy = archenemy;
 }
 
 
-// object method
-function SuperHeroInfo() {
-	line1 = "Name: " + this.name + "</br>";
-	line2 = "Alias: " + this.alias + "</br>";
-	line3 = "Birth Place: " + this.birthPlace + "</br>";
-	document.write(line1, line2, line3);
-	return this.name;
+SuperHero.prototype.introduce = function(name){
+	return "Hello, I am " + name + " and I am here to save you!";
+};
+
+SuperHero.prototype.fight = function(archenemy){
+  if (this.nature != archenemy.nature){
+   
+    if (this.powers.strength > archenemy.powers.strength) {
+      return this.name + ' wins!';
+    }
+    else { 
+      return this.name + ' loses!';
+    }
+  }
+  else {
+    return 'no fight!';
+  }
+};
+
+var supermanPowers = {
+  strength: 10,
+  flight: "flight"
+};
+
+var lexluthorPowers = {
+  strength: 3,
+  smart: "smart",
+};
+
+var spidermanPowers = {
+  strength: 3,
+  smart: "smart",
+};
+
+var batmanPowers = {
+  strength: 3,
+  smart: "smart",
+};
+
+function SuperMutant(name, powers, nature, archenemy, mutation_type, physical_change){
+	SuperHero.call(this, name, powers, nature, archenemy);
+	this.mutation_type = mutation_type;
+	this.physical_change = physical_change;
 }
 
-// create object instance
-var superman = new SuperHero("Superman", "Clark", "Super Strength");
+function SuperMaker(name, powers, nature, archenemy, tools, transportation){
+	SuperHero.call(this, name, powers, nature, archenemy)
+	this.tools = tools;
+	this.transportation = transportation;
+}
 
-// extend object instance
-superman.birthPlace = "Crypton";
+// Instantiate superheros...
+var superman = new SuperHero("Superman", supermanPowers, "good", "lexluthor");
+
+var lexluthor = new SuperHero("Lex Luthor", lexluthorPowers, "evil", "superman");
+
+// Subclasses...
+SuperMutant.prototype = Object.create(SuperHero.prototype);
+SuperMutant.prototype.constructor = SuperMutant;
+
+// Instantiate subclasses
+var spiderman = new SuperMutant("Spiderman", spidermanPowers, "good", "green goblin", "spider dna", "spider powers" );
+
+var batman = new SuperMaker("Batman", batmanPowers, "good", "joker", "utility belt", "bat mobile")
+
 
 // call method on the instance of the object
-superman.SuperHeroInfo();
-
 SuperHero.prototype.fly = function() {
-	console.log('up and away');
+	return 'up and away';
+};
 
-}();
+// Parent class: good vs. evil...
+superman.fight(lexluthor);
+
+// Parent class vs. subclass, good vs. good....
+superman.fight(batman);
+
+
+
 
