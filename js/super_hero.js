@@ -55,7 +55,7 @@ function SuperMutant(name, powers, nature, archenemy, mutation_type, physical_ch
 }
 
 function SuperMaker(name, powers, nature, archenemy, tools, transportation){
-	SuperHero.call(this, name, powers, nature, archenemy)
+	SuperHero.call(this, name, powers, nature, archenemy);
 	this.tools = tools;
 	this.transportation = transportation;
 }
@@ -72,7 +72,7 @@ SuperMutant.prototype.constructor = SuperMutant;
 // Instantiate subclasses
 var spiderman = new SuperMutant("Spiderman", spidermanPowers, "good", "green goblin", "spider dna", "spider powers" );
 
-var batman = new SuperMaker("Batman", batmanPowers, "good", "joker", "utility belt", "bat mobile")
+var batman = new SuperMaker("Batman", batmanPowers, "good", "joker", "utility belt", "bat mobile");
 
 
 // call method on the instance of the object

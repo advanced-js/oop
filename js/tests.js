@@ -16,9 +16,9 @@ test('spiderman intro', function() {
 
 // 
 test('superman vs. lex luthor', function() {
-	equal(superman.fight(lexluthor), "Superman wins!", "Supehero fight")
+	equal(superman.fight(lexluthor), "Superman wins!", "Supehero fight");
 });
 
 test('superman vs. batman', function() {
-	equal(superman.fight(batman), "no fight!", "Supehero fight")
+	equal(superman.fight(batman), "no fight!", "Supehero fight");
 });
