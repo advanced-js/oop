@@ -15,4 +15,4 @@ Make at least one of the methods interact with another `SuperHero`, such as `att
 
 ## V3
 
-Make 2+ `SuperHero` subclasses that have two or special properties and actions, with tests.
+Make 2+ `SuperHero` subclasses that have two or special properties and actions, with tests covering all of the functionality.
