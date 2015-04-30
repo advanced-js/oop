@@ -22,3 +22,7 @@ QUnit.test('superman.fly()', function() {
 QUnit.test('superman.destroy()', function() {
 	equal(superman.destroy(), "Yes, your superhero can destroy the enemy!", "superhero.destroy() outputs correct string!");
 });
+
+QUnit.test('SuperHero.prototype.attack()', function(assert) {
+	assert.strictEqual(superman.attack, batman.attack, "Superman and Batman are attacking each other!");
+});

@@ -14,4 +14,9 @@ SuperHero.prototype.destroy = function() {
 	return "Yes, your superhero can destroy the enemy!";
 }
 
+SuperHero.prototype.attack = function() {
+	return "Attack the other superhero!";
+}
+
 var superman = new SuperHero("Clark Kent", 27);
+var batman = new SuperHero("John Wayne", 34);
