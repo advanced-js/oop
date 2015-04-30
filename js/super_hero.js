@@ -18,11 +18,11 @@ var Superhero = function( name, strength, archNemisis, loveInterest, isLoveRequi
       this.strength--;
       return loseFightStr;
     }
-  }
+  };
 
   this.LoveScene = function() {
     var loveRequitedStr = this.name + " approaches " + this.loveInterest + " and (after obtaining consent) kisses them, and whispers \"" + this.catchphrase + ".\" \"Why do you do that? It's not sexy.\", " + this.loveInterest + " responds.";
-    var loveUnrequitedStr = this.name + "looks lovingly at " + this.loveInterest + ", dreaming of the day they can be together."
+    var loveUnrequitedStr = this.name + "looks lovingly at " + this.loveInterest + ", dreaming of the day they can be together.";
     return this.isLoveRequited ? loveRequitedStr : loveUnrequitedStr;
-  }
+  };
 };
