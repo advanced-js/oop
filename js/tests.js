@@ -32,5 +32,12 @@ QUnit.test("subclass Batman Director function", function(assert) {
   var earlyNinetiesMovies = Batman.prototype.Director(1990);
   assert.strictEqual(recentMovies, "Christopher Nolan" , "The Dark Knight movies were directed by");
   assert.strictEqual(earlyNinetiesMovies, "Tim Burton" , "Batman Begins and such");
+});
 
+QUnit.test("subclass Ironman RealName", function(assert) {
+  assert.strictEqual(IronMan.prototype.RealName(), "Tony Stark" , "Iron Man's real name");
+});
+
+QUnit.test("subclass Ironman selfidentifies", function(assert) {
+  assert.strictEqual(IronMan.prototype.selfidentifies(), "genius billionaire playboy philanthropist" , "Avengers quote");
 });

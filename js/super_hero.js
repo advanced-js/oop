@@ -41,3 +41,15 @@ Batman.prototype.Director = function(year) {
     return "Tim Burton";
   }
 };
+
+var IronMan = function() {};
+
+IronMan.prototype = Object.create(Superhero.prototype);
+
+IronMan.prototype.RealName = function() {
+  return "Tony Stark";
+};
+
+IronMan.prototype.selfidentifies = function() {
+  return "genius billionaire playboy philanthropist";
+};
