@@ -37,5 +37,16 @@ QUnit.test("Superhero has a name", function(assert) {
   assert.strictEqual(batMan.energy, 100, "drinkElixir method returns energy to 100%" );
 });
 
+QUnit.test("Villain has a name", function(assert) {
+  var goblin = new Villain("Goblin", 100, true);
+  assert.strictEqual(goblin.name, "Goblin", "Villain has a name" );
+});
+
+QUnit.test("Villain has a name", function(assert) {
+  var goblin = new Villain("Goblin", 100, true);
+  goblin.energy = 0;
+  goblin.comeBackFromDead();
+  assert.strictEqual(goblin.energy, 50, "Villain comes back from dead" );
+});
 
 // ADD TESTS HERE
