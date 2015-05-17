@@ -25,3 +25,25 @@ SuperHero.prototype.notHuman = function() {
 } 
 
 var superMan = new superHero("Superman", "superpower");
+
+
+SuperHero.prototype.attack = function() {
+	return "Attack another superhero!";
+};
+
+var newHero = function(name, ability) {
+	SuperHero.call(this, name, ability);
+	this.energyLevel = 10;	
+};
+
+
+newHero.prototype = Object.create(SuperHero.prototype);
+
+newHero.prototype.eatingCat = function() {
+	this.energyLevel +=1;
+}
+
+var superman = new SuperHero("Clark Kent", "superpower");
+var batman = new SuperHero("Bruce Wayne", "technology");
+var batgirl = new newHero ("Selena Kale", "being a cat");
+
