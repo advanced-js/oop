@@ -1,5 +1,3 @@
-var SuperHero = new Object();
-
 var SuperHero = function(realname, character, age, power) {
     this.realname = realname;
     this.character = character;
