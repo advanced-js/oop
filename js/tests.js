@@ -3,3 +3,9 @@ QUnit.test("hello test", function(assert) {
 });
 
 // ADD TESTS HERE
+
+QUnit.test("SuperHero", function(){
+
+	ok(SuperHero.name, 'Super hero has a default name');
+
+})
