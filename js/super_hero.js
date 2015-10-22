@@ -1,9 +1,5 @@
 
-var SuperHero = function(){
-    this.power;
-    this.name;
-    this.enemy;
-};
+var SuperHero = function(){};
 
 SuperHero.prototype = {
     setPower: function(power){
