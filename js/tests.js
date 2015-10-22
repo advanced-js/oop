@@ -3,3 +3,10 @@ QUnit.test("hello test", function(assert) {
 });
 
 // ADD TESTS HERE
+QUnit.test("side kick test", function(assert){
+	assert.strictEqual(plane.sideKick, "Dead", "Planes side kick was dynamically changed to dead.")
+	});
+
+QUnit.test("costume test", function(assert){
+	assert.strictEqual(car.costume, "cape", "Planes side kick was dynamically changed to dead.")
+	});
