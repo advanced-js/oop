@@ -54,7 +54,7 @@ var SuperHero = function (superName) {
 	this.isAlive = true;
 	this.hasWeapon = true;
 	this.hasShield = true;
-}
+};
 
 //Method using random number generator to determine 
 //which properties are active on instance of SuperHero
