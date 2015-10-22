@@ -10,7 +10,7 @@ ok(true, 'has property secretPower');
 ok(true, 'property isAlive is true');
 ok(true, 'property hasWeapon is true');
 ok(true, 'property hasShield is true');
-})
+});
 
 test('conditional assertions', function (assert){
 	assert.notEqual(false, true, "My weapons will save me");
