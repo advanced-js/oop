@@ -55,60 +55,69 @@ var SuperHero = function (superName) {
 	this.hasWeapon = true;
 	this.hasShield = true;
 };
+//Variables substitute for conversation strings as follow:
+var a = "My weapons will save me";
+var b = "Uh-oh. This is going to be sticky";
+var c = "You'll never Harm Me!!";
+var d = "GOOD AND EVIL BATTLE TO THE END!!!";
+var e = "EVIL HAS TRIUMPHED -- BUT WILL NEVER ENDURE!!";
+var f = "GOOD TRUMPS EVIL AGAIN!!";
+
 
 //Method using random number generator to determine 
 //which properties are active on instance of SuperHero
 SuperHero.prototype.powerAppraisal = function (){
 
-	if (parseInt(Math.random() * 18) % 2 === 0) {
+	if (Math.round(Math.random() * 18) % 2 === 0) {
 		this.hasSecretPower = false;
 	}
 
-	if (parseInt(Math.random() * 25) % 5 === 0) {
+	if (Math.round(Math.random() * 25) % 5 === 0) {
 		this.hasShield = false;
 	}
 
 	if (this.hasSecretPower === false && this.hasShield === true) {
-		return "My weapons will save me";
+		return a;
 	}
 
 	if (this.hasShield === false && this.hasSecretPower === false ) {
-		return "Uh-oh. This is going to be sticky";
+		return b;
 	}
 
 else if (this.hasSecretPower === true && this.hasShield === true ||
  this.hasSecretPower === true && this.hasShield === false) {
-	return "You'll never Harm Me!!";
+	return c;
 }
 };
+
 
 //This function defines outcome of interaction (battle)
 //between two instances of SuperHero
 var showDown = function (x,y){
-if (x.powerAppraisal() === "My weapons will save me" && y.powerAppraisal() ===  "My weapons will save me"){
-return "GOOD AND EVIL BATTLE TO THE END!!!";}
-else if (x.powerAppraisal() === "Uh-oh. This is going to be sticky" && y.powerAppraisal() === "My weapons will save me"){
-return "EVIL HAS TRIUMPHED -- BUT WILL NEVER ENDURE!!";}
-else if (x.powerAppraisal() === "You'll never Harm Me!!" && y.powerAppraisal() === "My weapons will save me"){
-return "GOOD TRUMPS EVIL AGAIN!!";}
+if (x.powerAppraisal() === a && y.powerAppraisal() ===  a){
+return d;}
+else if (x.powerAppraisal() === b && y.powerAppraisal() === a){
+return e;}
+else if (x.powerAppraisal() === c && y.powerAppraisal() === a){
+return f;}
 
-else if (x.powerAppraisal() === "My weapons will save me" && y.powerAppraisal() === "Uh-oh. This is going to be sticky"){
-return "GOOD TRUMPS EVIL AGAIN!!";}
-else if (x.powerAppraisal() === "Uh-oh. This is going to be sticky" && y.powerAppraisal() === "Uh-oh. This is going to be sticky"){
-return "GOOD AND EVIL BATTLE TO THE END!!!";}
-else if (x.powerAppraisal() === "You'll never Harm Me!!" && y.powerAppraisal() == "Uh-oh. This is going to be sticky"){
-return "GOOD TRUMPS EVIL AGAIN!!";}
+else if (x.powerAppraisal() === a && y.powerAppraisal() === b){
+return f;}
+else if (x.powerAppraisal() === b && y.powerAppraisal() === b){
+return d;}
+else if (x.powerAppraisal() === c && y.powerAppraisal() == b){
+return f;}
 
-else if (x.powerAppraisal() === "My weapons will save me" && y.powerAppraisal() === "You'll never Harm Me!!"){
-return "EVIL HAS TRIUMPHED -- BUT WILL NEVER ENDURE!!";}
-else if (x.powerAppraisal() === "Uh-oh. This is going to be sticky" && y.powerAppraisal() === "You'll never Harm Me!!"){
-return "EVIL HAS TRIUMPHED -- BUT WILL NEVER ENDURE!!";}
-else if (x.powerAppraisal() === "You'll never Harm Me!!" && y.powerAppraisal() == "You'll never Harm Me!!"){
-return "GOOD AND EVIL BATTLE TO THE END!!!";}
+else if (x.powerAppraisal() === a && y.powerAppraisal() === c){
+return e;}
+else if (x.powerAppraisal() === b && y.powerAppraisal() === c){
+return e;}
+else if (x.powerAppraisal() === c && y.powerAppraisal() == c){
+return d;}
 
 };
 
-//Create tow instances of SuperHero
+//Create two instances of SuperHero
 var superPerson1 = new SuperHero('superPerson');
 var superPerson2 = new SuperHero('evilVillain');
 
@@ -120,3 +129,5 @@ console.log(superPerson1.superName + ' says: ' + superPerson1.powerAppraisal());
 console.log(superPerson2.superName + ' says: ' + superPerson2.powerAppraisal());
 console.log('The battle is done! Referee says: ' + (showDown(superPerson1, superPerson2)));
 
+
+console.log(Math.round(Math.random() * 25) % 5 === 0);
