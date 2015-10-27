@@ -1,3 +1,5 @@
+var SuperHero = new Object();
+
 var SuperHero = function(realname, character, age, power) {
     this.realname = realname;
     this.character = character;
@@ -23,7 +25,7 @@ var hulk = new SuperHero("Bruce Banner", "The Hulk", 34, "Superhuman Strength");
 var flash = new SuperHero("Barry Allen", "The Flash", 26, "Superhuman Speed");
 
 
-hulk.talk(flash);
+hulk.talk();
 hulk.newPower("Resistance to Injury");
 hulk.brag(flash);
 
