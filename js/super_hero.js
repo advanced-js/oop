@@ -12,7 +12,7 @@ var SuperHero = function (name, color) {
 SuperHero.prototype.attack = function (enemy) {
     console.log('Kick! Punch! Bam! Zing!'); 
     enemy.powerLevel--; 
-    $('#' + enemy.name).css('height', 500*(enemy.powerLevel*.1) + 'px'); 
+    $('#' + enemy.name).css('height', 500*(enemy.powerLevel*0.1) + 'px'); 
 
     if(enemy.powerLevel == 0) { 
         enemy.isHero = false; 
@@ -21,7 +21,7 @@ SuperHero.prototype.attack = function (enemy) {
 
 SuperHero.prototype.powerUp = function () {
     this.powerLevel++; 
-    $('#' + this.name).css('height', 500*(this.powerLevel*.1) + 'px'); 
+    $('#' + this.name).css('height', 500*(this.powerLevel*0.1) + 'px'); 
 
     if(this.powerLevel == 0) { 
         this.isHero = false; 
