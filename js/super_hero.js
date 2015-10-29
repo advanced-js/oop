@@ -286,27 +286,18 @@ var g = "EVIL HAS TRIUMPHED -- BUT IT WILL NEVER ENDURE!!";
 var h = "GOOD TRUMPS EVIL AGAIN!!";
 
 
-//Method using random number generator to determine 
- //which properties are active on instance of SuperHero
-if (parseInt(Math.random() * 18) % 2 === 0) {
-	this.hasSecretPower = false;
-}
-else if (parseInt(Math.random() * 25) % 5 === 0) {
-	this.hasWeapon = false;
-}
-
-
+ 
  //Method using random number generator to determine 
  //which properties are active on instance of SuperHero
  SuperHero.prototype.attack = function (){
  
- 	// if (parseInt(Math.random() * 18) % 2 === 0) {
- 	// 	this.hasSecretPower = false;
- 	// }
+ 	if (parseInt(Math.random() * 18) % 2 === 0) {
+ 		this.hasSecretPower = false;
+ 	}
  
- 	// else if (parseInt(Math.random() * 25) % 5 === 0) {
- 	// 	this.hasWeapon = false;
- 	// };
+ 	else if (parseInt(Math.random() * 25) % 5 === 0) {
+ 		this.hasWeapon = false;
+ 	};
  
  	if (this.hasSecretPower === false && this.hasWeapon === true) {
  		return a;
@@ -356,7 +347,7 @@ else if (parseInt(Math.random() * 25) % 5 === 0) {
  //This function defines outcome of interaction (attack/counterAttack)
  //between two instances of SuperHero
  var battleOutcome = function (x, y){
- if (x === a && y ===  d){
+ if (x === a && y === d){
  return f;}
  else if (x === b && y === d){
  return g;}

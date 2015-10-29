@@ -36,7 +36,7 @@ var c = 'With these secret powers you don\'t have a chance!!';
 var d = 'With this shield any weapon you try is just a toy!!';
 var e = 'Ha! Your attack is no match for my secret powers!!';
 
-//Testing attack method
+//Testing attack method with one instance of superHero: 'testHero'
 
 QUnit.module ('superHero.prototype.attack');
 test('method attack', function(assert) {
@@ -46,27 +46,27 @@ test('method attack', function(assert) {
 	switch (attack) {
 
 		case m.hasSecretPower === false && m.hasWeapon === true:
-		assert.equal(attack, a, 'My battle skills combined with these weapons will do you in!!');
+		assert.strictEqual(attack, a, 'My battle skills combined with these weapons will do you in!!');
 		break;
 
 		case m.hasSecretPower === false && m.hasWeapon === false:
-		assert.equal(attack, b, 'I will fight you with my bare hands!!');
+		assert.strictEqual(attack, b, 'I will fight you with my bare hands!!');
 		break;
 
 		case m.hasSecretPower === true && m.hasWeapon === true:
-		assert.equal(attack, c, 'With these secret powers you don\'t have a chance!!');
+		assert.strictEqual(attack, c, 'With these secret powers you don\'t have a chance!!');
 		break;
 
 		case m.hasSecretPower === true && m.hasWeapon === false:
-		assert.equal(attack, c, 'With these secret powers you don\'t have a chance!!');
+		assert.strictEqual(attack, c, 'With these secret powers you don\'t have a chance!!');
 		break;
 
 		default:
-		assert.equal(attack, c, 'DEFAULT CALLED');
+		assert.strictEqual(attack, c, 'DEFAULT CALLED');
 	}
 });
 
-//*****************
+//Testing counterAttack method with another instance of superHero: 'otherTestHero'
 QUnit.module ('superHero.prototype.counterAttack');
 test('method counterAttack', function(assert) {
 
@@ -94,3 +94,29 @@ test('method counterAttack', function(assert) {
 		assert.equal(counterAttack, e, 'DEFAULT CALLED');
 	}
 });
+
+//Testing outcome function:
+QUnit.module ('superHero.prototype.counterAttack');
+test('method counterAttack', function(assert) {
+	switch (battleOutcome(attack, counterAttack)) {
+		case (x === a && y === d):
+ return f;}
+ else if (x === b && y === d){
+ return g;}
+ else if (x === c && y === d){
+ return h;}
+ 
+ else if (x === a && y === b){
+ return h;}
+ else if (x === b && y === b){
+ return f;}
+ else if (x === c && y === b){
+ return h;}
+ 
+ else if (x === a && y === e){
+ return g;}
+ else if (x === b && y === e){
+ return g;}
+ else if (x === c && y === e){
+ return f;}
+}
