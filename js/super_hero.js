@@ -6,14 +6,13 @@ var SuperHero = function(superName,secretName,power,weakness) {
 	this.weakness = weakness;
 	this.secretName = secretName;
 	this.superName = superName;
-}
+};
 
 //Methods
 SuperHero.prototype.saveKittens = function (number) {
 	this.energy--;
 	var energyLevel = (this.energy * 10);
-	console.log("Feeling at " + energyLevel + "% of his power, " + this.secretName + " quickly transformed from his mild mannered alter ego, into " + this.superName + " and used his " +this.power+ " to save the " +number+ " kittens from a burning building.")
-	
+	console.log("Feeling at " + energyLevel + "% of his power, " + this.secretName + " quickly transformed from his mild mannered alter ego, into " + this.superName + " and used his " +this.power+ " to save the " +number+ " kittens from a burning building.");	
 };
 
 SuperHero.prototype.faceOffWithVillain = function (nemesis) {
