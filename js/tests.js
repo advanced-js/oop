@@ -62,7 +62,7 @@ test('method attack', function(assert) {
 		break;
 
 		default:
-		assert.equal(attack, b, 'DEFAULT CALLED');
+		assert.equal(attack, c, 'DEFAULT CALLED');
 	}
 });
 
@@ -70,27 +70,27 @@ test('method attack', function(assert) {
 QUnit.module ('superHero.prototype.counterAttack');
 test('method counterAttack', function(assert) {
 
-	var m = new SuperHero('testHero');
-	var attack = m.attack();
-	switch (attack) {
+	var w = new SuperHero('otherTestHero');
+	var counterAttack = w.counterAttack();
+	switch (counterAttack) {
 
-		case m.hasSecretPower === false && m.hasShield === true:
-		assert.equal(attack, d, 'With this shield any weapon you try is just a toy!!');
+		case w.hasSecretPower === false && w.hasShield === true:
+		assert.equal(counterAttack, d, 'With this shield any weapon you try is just a toy!!');
 		break;
 
-		case m.hasSecretPower === false && m.hasShield === false:
-		assert.equal(attack, b, 'I will fight you with my bare hands!!');
+		case w.hasSecretPower === false && w.hasShield === false:
+		assert.equal(counterAttack, b, 'I will fight you with my bare hands!!');
 		break;
 
-		case m.hasSecretPower === true && m.hasShield === true:
-		assert.equal(attack, e, 'Ha! Your attack is no match for my secret powers!!');
+		case w.hasSecretPower === true && w.hasShield === true:
+		assert.equal(counterAttack, e, 'Ha! Your attack is no match for my secret powers!!');
 		break;
 
-		case m.hasSecretPower === true && m.hasShield === false:
-		assert.equal(attack, e, 'Ha! Your attack is no match for my secret powers!!');
+		case w.hasSecretPower === true && w.hasShield === false:
+		assert.equal(counterAttack, e, 'Ha! Your attack is no match for my secret powers!!');
 		break;
 
 		default:
-		assert.equal(attack, c, 'DEFAULT CALLED');
+		assert.equal(counterAttack, e, 'DEFAULT CALLED');
 	}
 });

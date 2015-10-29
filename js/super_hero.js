@@ -271,6 +271,8 @@
  	this.isAlive = true;
  	this.hasWeapon = true;
  	this.hasShield = true;
+
+
 };
 
 // //Variables substitute for conversation strings as follow:
@@ -284,18 +286,27 @@ var g = "EVIL HAS TRIUMPHED -- BUT IT WILL NEVER ENDURE!!";
 var h = "GOOD TRUMPS EVIL AGAIN!!";
 
 
- 
+//Method using random number generator to determine 
+ //which properties are active on instance of SuperHero
+if (parseInt(Math.random() * 18) % 2 === 0) {
+	this.hasSecretPower = false;
+}
+else if (parseInt(Math.random() * 25) % 5 === 0) {
+	this.hasWeapon = false;
+}
+
+
  //Method using random number generator to determine 
  //which properties are active on instance of SuperHero
  SuperHero.prototype.attack = function (){
  
- 	if (parseInt(Math.random() * 18) % 2 === 0) {
- 		this.hasSecretPower = false;
- 	}
+ 	// if (parseInt(Math.random() * 18) % 2 === 0) {
+ 	// 	this.hasSecretPower = false;
+ 	// }
  
- 	else if (parseInt(Math.random() * 25) % 5 === 0) {
- 		this.hasWeapon = false;
- 	}
+ 	// else if (parseInt(Math.random() * 25) % 5 === 0) {
+ 	// 	this.hasWeapon = false;
+ 	// };
  
  	if (this.hasSecretPower === false && this.hasWeapon === true) {
  		return a;
@@ -317,15 +328,15 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  		this.hasSecretPower = false;
  	}
  
- 	if (parseInt(Math.random() * 25) % 5 === 0) {
+ 	else if (parseInt(Math.random() * 25) % 5 === 0) {
  		this.hasShield = false;
- 	}
- 
+ 	};
+
  	if (this.hasSecretPower === false && this.hasShield === true) {
  		return d;
  	}
  
- 	if (this.hasSecretPower === false && this.hasShield === false ) {
+ 	else if (this.hasSecretPower === false && this.hasShield === false ) {
  		return b;
  	}
  
@@ -334,62 +345,65 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  	return e;
  }
  };
-
- //This function defines outcome of interaction (attack/counterAttack)
- //between two instances of SuperHero
- var battleOutcome = function (x,y){
- if (x.attack(y) === a && y.counterAttack(x) ===  d){
- return f;}
- else if (x.attack(y) === b && y.counterAttack(x) === d){
- return g;}
- else if (x.attack(y) === c && y.counterAttack(x) === d){
- return h;}
- 
- else if (x.attack(y) === a && y.counterAttack(x) === b){
- return h;}
- else if (x.attack(y) === b && y.counterAttack(x) === b){
- return f;}
- else if (x.attack(y) === c && y.counterAttack(x) === b){
- return h;}
- 
- else if (x.attack(y) === a && y.counterAttack(x) === e){
- return g;}
- else if (x.attack(y) === b && y.counterAttack(x) === e){
- return g;}
- else if (x.attack(y) === c && y.counterAttack(x) === e){
- return f;}
-
- else if (y.attack(x) === a && x.counterAttack(y) ===  d){
- return f;}
- else if (y.attack(x) === b && x.counterAttack(y) === d){
- return g;}
- else if (y.attack(x) === c && x.counterAttack(y) === d){
- return h;}
- 
- else if (y.attack(x) === a && x.counterAttack(y) === b){
- return h;}
- else if (y.attack(x) === b && x.counterAttack(y) === b){
- return f;}
- else if (y.attack(x) === c && x.counterAttack(y) === b){
- return h;}
- 
- else if (y.attack(x) === a && x.counterAttack(y) === e){
- return g;}
- else if (y.attack(x) === b && x.counterAttack(y) === e){
- return g;}
- else if (y.attack(x) === c && x.counterAttack(y) === e){
- return f;}
- 
- };
- 
- //Create tow instances of SuperHero
+ //Create two instances of SuperHero
  var superPerson1 = new SuperHero("superPerson");
  var superPerson2 = new SuperHero("evilVillain");
 
- //Result of instantiation and interaction:
- //Call attack Method
- console.log(superPerson1.superName + " says: " +  superPerson1.attack(superPerson2));
- //Call counterAttack Method
- console.log(superPerson2.superName + " says: " + superPerson2.counterAttack(superPerson1));
+//Call methods & store results in variables
+ var attackResult = superPerson1.attack(superPerson2);
+ var counterAttackResult = superPerson2.counterAttack(superPerson1);
+
+ //This function defines outcome of interaction (attack/counterAttack)
+ //between two instances of SuperHero
+ var battleOutcome = function (x, y){
+ if (x === a && y ===  d){
+ return f;}
+ else if (x === b && y === d){
+ return g;}
+ else if (x === c && y === d){
+ return h;}
+ 
+ else if (x === a && y === b){
+ return h;}
+ else if (x === b && y === b){
+ return f;}
+ else if (x === c && y === b){
+ return h;}
+ 
+ else if (x === a && y === e){
+ return g;}
+ else if (x === b && y === e){
+ return g;}
+ else if (x === c && y === e){
+ return f;}
+
+ // else if (y.attack(x) === a && x.counterAttack(y) ===  d){
+ // return f;}
+ // else if (y.attack(x) === b && x.counterAttack(y) === d){
+ // return g;}
+ // else if (y.attack(x) === c && x.counterAttack(y) === d){
+ // return h;}
+ 
+ // else if (y.attack(x) === a && x.counterAttack(y) === b){
+ // return h;}
+ // else if (y.attack(x) === b && x.counterAttack(y) === b){
+ // return f;}
+ // else if (y.attack(x) === c && x.counterAttack(y) === b){
+ // return h;}
+ 
+ // else if (y.attack(x) === a && x.counterAttack(y) === e){
+ // return g;}
+ // else if (y.attack(x) === b && x.counterAttack(y) === e){
+ // return g;}
+ // else if (y.attack(x) === c && x.counterAttack(y) === e){
+ // return f;}
+ 
+ };
+ 
+
+ //Result of attack method call
+ console.log(superPerson1.superName + " says: " +  attackResult);
+ //Result of counterAttack method call
+ console.log(superPerson2.superName + " says: " + counterAttackResult);
  //Call battleOutcome function
- console.log("The battle is done! Referee says: " + (battleOutcome(superPerson1, superPerson2)));
+ console.log("The battle is done! Referee says: " + (battleOutcome(attackResult, counterAttackResult)));
