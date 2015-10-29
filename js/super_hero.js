@@ -1,10 +1,19 @@
 // var SuperHero = ...
-function begin() {
-	var Superhero= function (firstName) {
-  	this.firstName = firstName;
-  	this.power = teleklensis;
-  	this.sex = male;
-  	console.log('Superhero instantiated');
+
+var SuperHero = SuperHero || {};
+	SuperHero = function(title, power) {
+		this.title = title;
+		this.power = power;
+		this.health = 100;
+		this.attack = function(opponent) {
+		// var opponent
+			opponent.health -= 10;
+		};
 	};
-}
-console.log(begin());
+
+var superman = new SuperHero('Superman', 'god');
+var lex = new SuperHero('villian', 'money');
+
+superman.attack(lex);
+
+
