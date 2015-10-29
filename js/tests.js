@@ -49,7 +49,7 @@ test('method attack', function(assert) {
 		assert.equal(attack, a, 'My battle skills combined with these weapons will do you in!!');
 		break;
 
-		case m.hasWeapon === false && m.hasSecretPower === false:
+		case m.hasSecretPower === false && m.hasWeapon === false:
 		assert.equal(attack, b, 'I will fight you with my bare hands!!');
 		break;
 
@@ -57,8 +57,12 @@ test('method attack', function(assert) {
 		assert.equal(attack, c, 'With these secret powers you don\'t have a chance!!');
 		break;
 
-		default:
+		case m.hasSecretPower === true && m.hasWeapon === false:
 		assert.equal(attack, c, 'With these secret powers you don\'t have a chance!!');
+		break;
+
+		default:
+		assert.equal(attack, b, 'DEFAULT CALLED');
 	}
 });
 
@@ -70,19 +74,23 @@ test('method counterAttack', function(assert) {
 	var attack = m.attack();
 	switch (attack) {
 
-		case m.hasSecretPower === false && m.hasWeapon === true:
-		assert.equal(attack, a, 'My battle skills combined with these weapons will do you in!!');
+		case m.hasSecretPower === false && m.hasShield === true:
+		assert.equal(attack, d, 'With this shield any weapon you try is just a toy!!');
 		break;
 
-		case m.hasWeapon === false && m.hasSecretPower === false:
+		case m.hasSecretPower === false && m.hasShield === false:
 		assert.equal(attack, b, 'I will fight you with my bare hands!!');
 		break;
 
-		case m.hasSecretPower === true && m.hasWeapon === true:
-		assert.equal(attack, c, 'With these secret powers you don\'t have a chance!!');
+		case m.hasSecretPower === true && m.hasShield === true:
+		assert.equal(attack, e, 'Ha! Your attack is no match for my secret powers!!');
+		break;
+
+		case m.hasSecretPower === true && m.hasShield === false:
+		assert.equal(attack, e, 'Ha! Your attack is no match for my secret powers!!');
 		break;
 
 		default:
-		assert.equal(attack, c, 'With these secret powers you don\'t have a chance!!');
+		assert.equal(attack, c, 'DEFAULT CALLED');
 	}
 });

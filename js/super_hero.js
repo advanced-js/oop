@@ -301,7 +301,7 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  		return a;
  	}
  
- 	else if (this.hasWeapon === false && this.hasSecretPower === false ) {
+ 	else if (this.hasSecretPower === false && this.hasWeapon === false ) {
  		return b;
  	}
  
@@ -325,7 +325,7 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  		return d;
  	}
  
- 	if (this.hasShield === false && this.hasSecretPower === false ) {
+ 	if (this.hasSecretPower === false && this.hasShield === false ) {
  		return b;
  	}
  
