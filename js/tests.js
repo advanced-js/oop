@@ -1,20 +1,88 @@
-QUnit.test("hello test", function(assert) {
-  assert.strictEqual(1 + 1, 2, "One plus one is two");
+'use strict';
+QUnit.test('hello test', function(assert) {
+  assert.strictEqual(1 + 1, 2, 'One plus one is two');
+});
+//__________________________
+
+// TESTS FOR SOLUTION PART 2
+//__________________________
+
+// Testing Constructor
+
+QUnit.module ('superHero.constructor');
+test('constructor', function(assert) {
+
+	var m = new SuperHero('testHero');
+
+	var hasName = m.superName;
+	assert.strictEqual(hasName, 'testHero', 'has property superName');
+
+	var hasPower = m.hasSecretPower;
+	assert.strictEqual(hasPower, true, 'has property secretPower');
+
+	var isAlive = m.isAlive;
+	assert.strictEqual(isAlive, true, 'has property isAlive');
+
+	var hasWeapon = m.hasWeapon;
+	assert.strictEqual(hasWeapon, true, 'has property hasWeapon');
+
+	var hasShield = m.hasShield;
+	assert.strictEqual(hasShield, true, 'has property hasShield');
 });
 
-// TESTS FOR SOLUTION PART 1
+var a = 'My battle skills combined with these weapons will do you in!!';
+var b = 'I will fight you with my bare hands!!';
+var c = 'With these secret powers you don\'t have a chance!!';
+var d = 'With this shield any weapon you try is just a toy!!';
+var e = 'Ha! Your attack is no match for my secret powers!!';
 
-test('assertions', function (superName){
-ok(this.superName = superName,'has property superName');
-ok(true, 'has property secretPower');
-ok(true, 'property isAlive is true');
-ok(true, 'property hasWeapon is true');
-ok(true, 'property hasShield is true');
+//Testing attack method
+
+QUnit.module ('superHero.prototype.attack');
+test('method attack', function(assert) {
+
+	var m = new SuperHero('testHero');
+	var attack = m.attack();
+	switch (attack) {
+
+		case m.hasSecretPower === false && m.hasWeapon === true:
+		assert.equal(attack, a, 'My battle skills combined with these weapons will do you in!!');
+		break;
+
+		case m.hasWeapon === false && m.hasSecretPower === false:
+		assert.equal(attack, b, 'I will fight you with my bare hands!!');
+		break;
+
+		case m.hasSecretPower === true && m.hasWeapon === true:
+		assert.equal(attack, c, 'With these secret powers you don\'t have a chance!!');
+		break;
+
+		default:
+		assert.equal(attack, c, 'With these secret powers you don\'t have a chance!!');
+	}
 });
 
-test('conditional assertions', function (assert){
-	assert.notEqual(false, true, "My weapons will save me");
-	assert.equal(false, false, "Uh oh. This is going to be sticky");
-	assert.equal(true, true, "You'll never Harm Me!!");
-	assert.notEqual(true, false, "You'll never Harm Me!!");
+//*****************
+QUnit.module ('superHero.prototype.counterAttack');
+test('method counterAttack', function(assert) {
+
+	var m = new SuperHero('testHero');
+	var attack = m.attack();
+	switch (attack) {
+
+		case m.hasSecretPower === false && m.hasWeapon === true:
+		assert.equal(attack, a, 'My battle skills combined with these weapons will do you in!!');
+		break;
+
+		case m.hasWeapon === false && m.hasSecretPower === false:
+		assert.equal(attack, b, 'I will fight you with my bare hands!!');
+		break;
+
+		case m.hasSecretPower === true && m.hasWeapon === true:
+		assert.equal(attack, c, 'With these secret powers you don\'t have a chance!!');
+		break;
+
+		default:
+		assert.equal(attack, c, 'With these secret powers you don\'t have a chance!!');
+	}
 });
