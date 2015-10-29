@@ -48,7 +48,7 @@
  //---------------------------------------------------------
  
  //Create SuperHero class
- "use strict";
+ // "use strict";
  var SuperHero = function (superName) {
  	this.superName = superName;
  	this.hasSecretPower = true;
@@ -81,7 +81,7 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  
  	else if (parseInt(Math.random() * 25) % 5 === 0) {
  		this.hasWeapon = false;
- 	};
+ 	}
  
  	if (this.hasSecretPower === false && this.hasWeapon === true) {
  		return a;
@@ -105,7 +105,7 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  
  	else if (parseInt(Math.random() * 25) % 5 === 0) {
  		this.hasShield = false;
- 	};
+ 	}
 
  	if (this.hasSecretPower === false && this.hasShield === true) {
  		return d;
