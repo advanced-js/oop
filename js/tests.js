@@ -8,7 +8,7 @@ QUnit.test("superHero object", function(assert) {
 	var x = new SuperHero("Superman", "God");
  	assert.strictEqual(x.title, "Superman");
  	assert.strictEqual(x.power, "God");
- 	assert.strictEqual(x.attack(), this.health);
+ 	// assert.strictEqual(x.attack(), this.health);
  });
 
 // QUnit.test("loveScene function", function(assert) {
