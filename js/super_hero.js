@@ -1,26 +1,37 @@
-var SuperHero = function (name) {
+var SuperHero = function (name, color) {
     this.name = name; 
-    this.superpower = 'Flying'; 
-    this.hurt = false; 
+    this.powerLevel = 10;
+    this.color = color; 
+
+    // construct/create HTML element representing superhero
+    var superHeroElement = '<div id="' + name + '" class="superhero" style="background: ' + color + ';">' + name + '</div>'; 
+    $('#SuperHeroWrapper').append(superHeroElement); 
 };
 
-
-// class methods
 SuperHero.prototype.attack = function (enemy) {
     console.log('Kick! Punch! Bam! Zing!'); 
-    enemy.hurt = true; 
+    enemy.powerLevel--; 
+    $('#' + enemy.name).css('height', 500*(enemy.powerLevel*.1) + 'px'); 
 };
 
-SuperHero.prototype.giveMotivationalSpeech = function () {
-    console.log('The earth is safe again!'); 
+SuperHero.prototype.powerUp = function () {
+    this.powerLevel++; 
+    $('#' + this.name).css('height', 500*(this.powerLevel*.1) + 'px'); 
 };
 
 
-// instantiate
-var batman = new SuperHero('batman'); 
-var superman = new SuperHero('superman'); 
+// begin!
+$(document).ready(function() { 
+    var batman = new SuperHero('batman', 'black'); 
+    var superman = new SuperHero('superman', 'blue'); 
 
-superman.attack(batman); 
+    batman.attack(superman); 
+    batman.attack(superman); 
 
-console.log(superman); 
-console.log(batman); // batman is hurt!
+    superman.attack(batman); 
+
+    batman.powerUp(); 
+
+    console.log(batman); 
+    console.log(superman); 
+}); 
