@@ -8,5 +8,5 @@ QUnit.test("side kick test", function(assert){
 	});
 
 QUnit.test("costume test", function(assert){
-	assert.strictEqual(car.costume, "cape", "Planes side kick was dynamically changed to dead.")
+	assert.strictEqual(car.costume, "cape", "Checks that costume is cape.")
 	});
