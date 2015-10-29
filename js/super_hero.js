@@ -14,7 +14,7 @@ SuperHero.prototype.attack = function (enemy) {
     enemy.powerLevel--; 
     $('#' + enemy.name).css('height', 500*(enemy.powerLevel*0.1) + 'px'); 
 
-    if(enemy.powerLevel == 0) { 
+    if(enemy.powerLevel === 0) { 
         enemy.isHero = false; 
     }
 };
@@ -23,7 +23,7 @@ SuperHero.prototype.powerUp = function () {
     this.powerLevel++; 
     $('#' + this.name).css('height', 500*(this.powerLevel*0.1) + 'px'); 
 
-    if(this.powerLevel == 0) { 
+    if(this.powerLevel === 0) { 
         this.isHero = false; 
     }
 };
