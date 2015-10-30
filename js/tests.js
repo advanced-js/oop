@@ -70,9 +70,9 @@ test('method attack', function(assert) {
 
 		default:
 		assert.strictEqual(attack, c, 'DEFAULT CALLED');
-		console.log(attack);
-		console.log(m.hasSecretPower)
-		console.log(m.hasWeapon);
+		// console.log(attack);
+		// console.log(m.hasSecretPower)
+		// console.log(m.hasWeapon);
 	}
 
 
