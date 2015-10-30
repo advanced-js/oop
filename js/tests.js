@@ -31,6 +31,7 @@ test('constructor', function(assert) {
 
 	var hasShield = m.hasShield;
 	assert.strictEqual(hasShield, true, 'has property hasShield');
+
 });
 
 var a = 'My battle skills combined with these weapons will do you in!!';
@@ -69,6 +70,9 @@ test('method attack', function(assert) {
 
 		default:
 		assert.strictEqual(attack, c, 'DEFAULT CALLED');
+		console.log(attack);
+		console.log(m.hasSecretPower)
+		console.log(m.hasWeapon);
 	}
 
 

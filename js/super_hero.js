@@ -75,11 +75,11 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  //which properties are active on instance of SuperHero
  SuperHero.prototype.attack = function (){
  
- 	if (parseInt(Math.random() * 18) % 2 === 0) {
+ 	if (Math.round(Math.random() * 18) % 2 === 0) {
  		this.hasSecretPower = false;
  	}
  
- 	else if (parseInt(Math.random() * 25) % 5 === 0) {
+ 	else if (Math.round(Math.random() * 25) % 5 === 0) {
  		this.hasWeapon = false;
  	}
  
@@ -99,11 +99,11 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  
  SuperHero.prototype.counterAttack = function (){
  
- 	if (parseInt(Math.random() * 18) % 2 === 0) {
+ 	if (Math.round(Math.random() * 18) % 2 === 0) {
  		this.hasSecretPower = false;
  	}
  
- 	else if (parseInt(Math.random() * 25) % 5 === 0) {
+ 	else if (Math.round(Math.random() * 25) % 5 === 0) {
  		this.hasShield = false;
  	}
 
