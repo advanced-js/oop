@@ -1,4 +1,3 @@
-// 'use strict';
 var attack;
 var counterAttack;
 
@@ -39,76 +38,79 @@ var b = 'I will fight you with my bare hands!!';
 var c = 'With these secret powers you don\'t have a chance!!';
 var d = 'With this shield any weapon you try is just a toy!!';
 var e = 'Ha! Your attack is no match for my secret powers!!';
-var f = "GOOD AND EVIL BATTLE TO THE END!!!";
-var g = "EVIL HAS TRIUMPHED -- BUT IT WILL NEVER ENDURE!!";
-var h = "GOOD TRUMPS EVIL AGAIN!!";
+var f = 'GOOD AND EVIL BATTLE TO THE END!!!';
+var g = 'EVIL HAS TRIUMPHED -- BUT IT WILL NEVER ENDURE!!';
+var h = 'GOOD TRUMPS EVIL AGAIN!!';
 
 //Testing attack method with one instance of superHero: 'testHero'
 
 QUnit.module ('superHero.prototype.attack');
-test('method attack', function(assert) {
+QUnit.test('method attack', function(assert) {
 
 	var m = new SuperHero('testHero');
 	attack = m.attack();
-	switch (attack) {
 
-		case m.hasSecretPower === false && m.hasWeapon === true:
-		assert.strictEqual(attack, a, 'My battle skills combined with these weapons will do you in!!');
-		break;
+	// console.log(Math.round(Math.random() * 18) % 2 === 0);
+	// console.log(Math.round(Math.random() * 25) % 5 === 0);
 
-		case m.hasSecretPower === false && m.hasWeapon === false:
-		assert.strictEqual(attack, b, 'I will fight you with my bare hands!!');
-		break;
+	if
+			(m.hasSecretPower === false && m.hasWeapon === true) {
+			assert.strictEqual(attack, a, 'My battle skills combined with these weapons will do you in!!');
 
-		case m.hasSecretPower === true && m.hasWeapon === true:
-		assert.strictEqual(attack, c, 'With these secret powers you don\'t have a chance!!');
-		break;
+	} else if
 
-		case m.hasSecretPower === true && m.hasWeapon === false:
-		assert.strictEqual(attack, c, 'With these secret powers you don\'t have a chance!!');
-		break;
+		(m.hasSecretPower === false && m.hasWeapon === false) {
+			assert.strictEqual(attack, b, 'I will fight you with my bare hands!!');
 
-		default:
-		assert.strictEqual(attack, c, 'DEFAULT CALLED');
-		// console.log(attack);
-		// console.log(m.hasSecretPower)
-		// console.log(m.hasWeapon);
+	} else if
+
+		(m.hasSecretPower === true && m.hasWeapon === true) {
+			assert.strictEqual(attack, c, 'With these secret powers you don\'t have a chance!!');
+
+	} else
+
+		{assert.strictEqual(attack, c, 'With these secret powers you don\'t have a chance!!');
 	}
+
+	// console.log("ATTACK FROM TEST: " + attack);
+
+	});
 
 
 //Testing counterAttack method with another instance of superHero: 'otherTestHero'
 QUnit.module ('superHero.prototype.counterAttack');
-test('method counterAttack', function(assert) {
+QUnit.test('method counterAttack', function(assert) {
+
 
 	var w = new SuperHero('otherTestHero');
 	counterAttack = w.counterAttack();
-	switch (counterAttack) {
 
-		case w.hasSecretPower === false && w.hasShield === true:
-		assert.equal(counterAttack, d, 'With this shield any weapon you try is just a toy!!');
-		break;
+		if
 
-		case w.hasSecretPower === false && w.hasShield === false:
-		assert.equal(counterAttack, b, 'I will fight you with my bare hands!!');
-		break;
+			(w.hasSecretPower === false && w.hasShield === true) {
+				assert.equal(counterAttack, d, 'With this shield any weapon you try is just a toy!!');
 
-		case w.hasSecretPower === true && w.hasShield === true:
-		assert.equal(counterAttack, e, 'Ha! Your attack is no match for my secret powers!!');
-		break;
+			} else if
 
-		case w.hasSecretPower === true && w.hasShield === false:
-		assert.equal(counterAttack, e, 'Ha! Your attack is no match for my secret powers!!');
-		break;
+			(w.hasSecretPower === false && w.hasShield === false) {
+				assert.equal(counterAttack, b, 'I will fight you with my bare hands!!');
 
-		default:
-		assert.equal(counterAttack, e, 'DEFAULT CALLED');
-	}
+			} else if
 
+			(w.hasSecretPower === true && w.hasShield === true)
+			{assert.equal(counterAttack, e, 'Ha! Your attack is no match for my secret powers!!');
+
+		} else
+
+			{assert.equal(counterAttack, e, 'Ha! Your attack is no match for my secret powers!!');
+		}
+		// console.log("COUNTERATTACK FROM TEST: " + counterAttack);
+	});
 
 
 //Testing outcome function:
 QUnit.module ('Test of battleOutcome function');
-test('battleOutcome Function', function(assert) {
+QUnit.test('battleOutcome Function', function(assert) {
 	var x = attack;
 	var y = counterAttack;
 	var battleOutcomeTest = battleOutcome(x, y);
@@ -117,51 +119,55 @@ test('battleOutcome Function', function(assert) {
 	// console.log(y);
 
 
-	switch (battleOutcomeTest) {
+if (x === a && y === d) {
 
-		case (x === a && y === d):
-		assert.strictEqual(battleOutcomeTest, f, 'GOOD AND EVIL BATTLE TO THE END!!!');
-		break;
+	assert.strictEqual(battleOutcomeTest, f, 'GOOD AND EVIL BATTLE TO THE END!!!');
 
-		case (x === b && y === d):
+} else if
+
+(x === b && y === d) {
 		assert.strictEqual(battleOutcomeTest, g, 'EVIL HAS TRIUMPHED -- BUT IT WILL NEVER ENDURE!!');
-		break;
-		
-		case (x === c && y === d):
+
+	} else if
+
+	(x === c && y === d) {
 		assert.strictEqual(battleOutcomeTest, h, 'GOOD TRUMPS EVIL AGAIN!!');
-		break;
 
+	} else if
 
-		case (x === a && y === b):
+	(x === a && y === b) {
 		assert.strictEqual(battleOutcomeTest, h, 'GOOD TRUMPS EVIL AGAIN!!');
-		break;
 
-		case (x === b && y === b):
+	} else if
+
+	(x === b && y === b) {
+
 		assert.strictEqual(battleOutcomeTest, f, 'GOOD AND EVIL BATTLE TO THE END!!!');
-		break;
 
-		case (x === c && y === b):
+	} else if
+
+	(x === c && y === b) {
+
 		assert.strictEqual(battleOutcomeTest, h, 'GOOD TRUMPS EVIL AGAIN!!');
-		break;
 
+	} else if
 
-		case (x === a && y === e):
+	(x === a && y === e) {
+
 		assert.strictEqual(battleOutcomeTest, g, 'EVIL HAS TRIUMPHED -- BUT IT WILL NEVER ENDURE!!');
-		break;
 
-		case (x === b && y === e):
+	} else if
+
+	(x === b && y === e) {
+
 		assert.strictEqual(battleOutcomeTest, g, 'EVIL HAS TRIUMPHED -- BUT IT WILL NEVER ENDURE!!');
-		break;
 
-		case (x === c && y === e):
+	} else {
+
 		assert.strictEqual(battleOutcomeTest, f, 'GOOD AND EVIL BATTLE TO THE END!!!');
-		break;
 
-		default:
-		assert.strictEqual(battleOutcomeTest, f, 'DEFAULT CALLED');
-}
-// console.log(battleOutcomeTest);
-}
-);
+	}
+		// console.log("BATTLEOUTCOME FROM TEST: " + battleOutcomeTest);
+
 });
-});
+
