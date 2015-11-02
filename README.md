@@ -25,3 +25,8 @@ Make a base class with two subclasses that have two or special properties and ac
 1. Repeat from step 1.
 
 As an example, you could make a `SuperHuman` base class with `SuperHero` and `SuperVillain` subclasses. Maybe `SuperHero`es have the ability to have a shield, and therefore `attack(hero)` will have different behavior than `attack(villain)`.
+
+### Resources
+
+* [Slide on inheritance](http://advanced-js.github.io/deck/examples/oop_inheritance/)
+* [Slide on calling superclass methods](http://advanced-js.github.io/deck/examples/oop_super/)
