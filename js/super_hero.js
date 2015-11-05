@@ -19,16 +19,14 @@ var DrMohinderSuresh = new SuperHero();
 	DrMohinderSuresh.mame = 'Dr. Modinder Suresh';
 	DrMohinderSuresh.fightLevel = 1;
 	DrMohinderSuresh.energy = 5;
-console.log(DrMohinderSuresh);
+
 
 var ClaireBennet = new SuperHero();
  	ClaireBennet.name = ' Claire Bennet';
  	ClaireBennet.energy = 5;
    
    	DrMohinderSuresh.attack(DrMohinderSuresh, ClaireBennet);
-   	console.log('Current engey for '+ DrMohinderSuresh.name + ' is ' + DrMohinderSuresh.energy); 
-
- 
+   	
 
 
 
