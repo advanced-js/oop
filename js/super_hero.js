@@ -168,9 +168,9 @@ var j = "NOT SO FAST! THIS BOMB IS THE END TO ALL YOUR EVIL";
  return f;}
  
  	if (battleOutcome(attackResult, counterAttackResult) === g) {
-	console.log(superChild1.superName + " says: " + surpriseAttackResult)
+	console.log(superChild1.superName + " says: " + surpriseAttackResult);
  }
-}
+};
  //Result of attack method call
  console.log(superPerson1.superName + " says: " +  attackResult);
  //Result of counterAttack method call
