@@ -19,7 +19,7 @@ var HealerType = function(superName,secretName,power,weakness) {
 	this.weakness = weakness;
 	this.secretName = secretName;
 	this.superName = superName;
-}
+};
 HealerType.prototype = Object.create(SuperHero.prototype);
 
 var WaterType = function(superName,secretName,power,weakness) {
@@ -29,7 +29,7 @@ var WaterType = function(superName,secretName,power,weakness) {
 	this.weakness = weakness;
 	this.secretName = secretName;
 	this.superName = superName;
-}
+};
 WaterType.prototype = Object.create(SuperHero.prototype);
 
 
@@ -43,7 +43,7 @@ SuperHero.prototype.saveKittens = function (number) {
 	}
 	else {
 		console.log("Feeling at " + energyLevel + "% of his power, " + this.secretName + " quickly transformed from his mild mannered alter ego, into " + this.superName + " and used his " +this.power+ " to save the " +number+ " kittens from a burning building.");	
-		console.log("it cost him 10% of his energy, bringing him down to " + energyLevel + "% power")
+		console.log("it cost him 10% of his energy, bringing him down to " + energyLevel + "% power");
 	}
 };
 
@@ -70,12 +70,12 @@ SuperHero.prototype.thrownInOcean = function(nemesis) {
 		console.log(this.superName + " is dead");
 	}
 	else {
-		console.log(nemesis.superName + " has thrown " + this.superName + " into the ocean")
+		console.log(nemesis.superName + " has thrown " + this.superName + " into the ocean");
 		console.log("our hero, " + this.superName + " has drowned");
 		this.alive = false;
 		this.health = 0;
 	}
-}
+};
 
 HealerType.prototype.faceOff = function (nemesis) {
 	if (!this.alive) {
@@ -101,14 +101,11 @@ WaterType.prototype.thrownInOcean = function(nemesis){
 		console.log(this.superName + " is dead");
 	}
 	else {
-		console.log(nemesis.superName + " has thrown " + this.superName + " into the ocean")
+		console.log(nemesis.superName + " has thrown " + this.superName + " into the ocean");
 		console.log("our hero, " + this.superName + " swims around and is healed back to 100%");
 		this.health = 100;
 	}
-}
-
-
-
+};
 
 SuperHero.allInstances = []; // creating an array so that any time a new instance of a SuperHero is created, I can target all for QUnit checks.
 var wolverine = new HealerType('wolverine','Logan','Slashing & Healing','Magnets');
