@@ -1,5 +1,7 @@
 var attack;
 var counterAttack;
+var x;
+var y;
 
 QUnit.test('hello test', function(assert) {
   assert.strictEqual(1 + 1, 2, 'One plus one is two');
@@ -33,6 +35,21 @@ test('constructor', function(assert) {
 
 });
 
+// Testing Child Class Constructor
+
+QUnit.module ('superChild.constructor');
+test('constructor', function(assert) {
+
+	var k = new SuperChild('testChild');
+
+	var hasName = k.superName;
+	assert.strictEqual(hasName, 'testChild', 'has property superName');
+
+	var hasBomb = k.hasBomb;
+	assert.strictEqual(hasBomb, true, 'has bomb');
+
+});
+
 var a = 'My battle skills combined with these weapons will do you in!!';
 var b = 'I will fight you with my bare hands!!';
 var c = 'With these secret powers you don\'t have a chance!!';
@@ -41,6 +58,7 @@ var e = 'Ha! Your attack is no match for my secret powers!!';
 var f = 'GOOD AND EVIL BATTLE TO THE END!!!';
 var g = 'EVIL HAS TRIUMPHED -- BUT IT WILL NEVER ENDURE!!';
 var h = 'GOOD TRUMPS EVIL AGAIN!!';
+var j = "NOT SO FAST! THIS BOMB IS THE END TO ALL YOUR EVIL";
 
 //Testing attack method with one instance of superHero: 'testHero'
 
@@ -50,11 +68,14 @@ QUnit.test('method attack', function(assert) {
 	var m = new SuperHero('testHero');
 	attack = m.attack();
 
-	// console.log(Math.round(Math.random() * 18) % 2 === 0);
-	// console.log(Math.round(Math.random() * 25) % 5 === 0);
 
 	if
-			(m.hasSecretPower === false && m.hasWeapon === true) {
+		(m.hasBomb === true) {
+			assert.strictEqual(attack, j, 'NOT SO FAST! THIS BOMB IS THE END TO ALL YOUR EVIL');
+
+	} else if
+
+		(m.hasSecretPower === false && m.hasWeapon === true) {
 			assert.strictEqual(attack, a, 'My battle skills combined with these weapons will do you in!!');
 
 	} else if
@@ -71,13 +92,10 @@ QUnit.test('method attack', function(assert) {
 
 		{assert.strictEqual(attack, c, 'With these secret powers you don\'t have a chance!!');
 	}
-
-	// console.log("ATTACK FROM TEST: " + attack);
-
-	});
-
+});
 
 //Testing counterAttack method with another instance of superHero: 'otherTestHero'
+
 QUnit.module ('superHero.prototype.counterAttack');
 QUnit.test('method counterAttack', function(assert) {
 
@@ -104,19 +122,16 @@ QUnit.test('method counterAttack', function(assert) {
 
 			{assert.equal(counterAttack, e, 'Ha! Your attack is no match for my secret powers!!');
 		}
-		// console.log("COUNTERATTACK FROM TEST: " + counterAttack);
+
 	});
 
-
 //Testing outcome function:
+
 QUnit.module ('Test of battleOutcome function');
 QUnit.test('battleOutcome Function', function(assert) {
 	var x = attack;
 	var y = counterAttack;
 	var battleOutcomeTest = battleOutcome(x, y);
-
-	// console.log(x);
-	// console.log(y);
 
 
 if (x === a && y === d) {
@@ -162,12 +177,10 @@ if (x === a && y === d) {
 
 		assert.strictEqual(battleOutcomeTest, g, 'EVIL HAS TRIUMPHED -- BUT IT WILL NEVER ENDURE!!');
 
-	} else {
+	} else if
+
+	(x === c && y === e) {
 
 		assert.strictEqual(battleOutcomeTest, f, 'GOOD AND EVIL BATTLE TO THE END!!!');
-
 	}
-		// console.log("BATTLEOUTCOME FROM TEST: " + battleOutcomeTest);
-
 });
-

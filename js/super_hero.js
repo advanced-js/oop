@@ -55,9 +55,16 @@
  	this.isAlive = true;
  	this.hasWeapon = true;
  	this.hasShield = true;
-
-
 };
+
+function SuperChild(superName) {
+	SuperHero.call(this, superName);
+	this.hasBomb = true;
+}
+
+SuperChild.prototype = Object.create(SuperHero.prototype);
+SuperChild.prototype.constructor = SuperChild;
+
 
 // //Variables substitute for conversation strings as follow:
 var a = "My battle skills combined with these weapons will do you in!!";
@@ -68,6 +75,7 @@ var e = "Ha! Your attack is no match for my secret powers!!";
 var f = "GOOD AND EVIL BATTLE TO THE END!!!";
 var g = "EVIL HAS TRIUMPHED -- BUT IT WILL NEVER ENDURE!!";
 var h = "GOOD TRUMPS EVIL AGAIN!!";
+var j = "NOT SO FAST! THIS BOMB IS THE END TO ALL YOUR EVIL";
 
 
  
@@ -82,7 +90,11 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  	else if (Math.round(Math.random() * 25) % 5 === 0) {
  		this.hasWeapon = false;
  	}
- 
+
+ 	if (this.hasBomb === true) {
+ 		return j;
+ 	}
+
  	if (this.hasSecretPower === false && this.hasWeapon === true) {
  		return a;
  	}
@@ -90,11 +102,12 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  	else if (this.hasSecretPower === false && this.hasWeapon === false ) {
  		return b;
  	}
- 
- else if (this.hasSecretPower === true && this.hasWeapon === true ||
+
+ 	else if (this.hasSecretPower === true && this.hasWeapon === true ||
   this.hasSecretPower === true && this.hasWeapon === false) {
- 	return c;
- }
+ 		return c;
+ 	}
+
  };
  
  SuperHero.prototype.counterAttack = function (){
@@ -123,10 +136,12 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  //Create two instances of SuperHero
  var superPerson1 = new SuperHero("superPerson");
  var superPerson2 = new SuperHero("evilVillain");
+ var superChild1 = new SuperChild("superChild");
 
 //Call methods & store results in variables
  var attackResult = superPerson1.attack(superPerson2);
  var counterAttackResult = superPerson2.counterAttack(superPerson1);
+ var surpriseAttackResult = superChild1.attack(superPerson2);
 
  //This function defines outcome of interaction (attack/counterAttack)
  //between two instances of SuperHero
@@ -134,7 +149,7 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  if (x === a && y === d){
  return f;}
  else if (x === b && y === d){
- return g;}
+ 	return g;}
  else if (x === c && y === d){
  return h;}
  
@@ -146,17 +161,22 @@ var h = "GOOD TRUMPS EVIL AGAIN!!";
  return h;}
  
  else if (x === a && y === e){
- return g;}
+ 	return g;}
  else if (x === b && y === e){
- return g;}
+ 	return g;}
  else if (x === c && y === e){
  return f;}
-};
  
-
+ 	if (battleOutcome(attackResult, counterAttackResult) === g) {
+	console.log(superChild1.superName + " says: " + surpriseAttackResult)
+ }
+}
  //Result of attack method call
  console.log(superPerson1.superName + " says: " +  attackResult);
  //Result of counterAttack method call
  console.log(superPerson2.superName + " says: " + counterAttackResult);
  //Call battleOutcome function
  console.log("The battle is done! Referee says: " + (battleOutcome(attackResult, counterAttackResult)));
+
+
+
