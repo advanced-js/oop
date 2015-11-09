@@ -31,7 +31,7 @@ sampleman.faceOff(flash);
 SuperHero.allInstances.forEach(function(entry) {
 		if (entry.health === 0)  {
 			QUnit.test("Confirm SuperHero death at zero health", function(assert){
-									assert.equal(entry.alive, false, entry.superName + " alive status is set to false when health is at 0")
+									assert.equal(entry.alive, false, entry.superName + " alive status is set to false when health is at 0");
 			});
 		}
 });
