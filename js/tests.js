@@ -10,7 +10,7 @@ QUnit.test("SuperHero value check", function(assert){
 	//var dudMan = new SuperHero('Dud Man','nopowers');
 	
 	SuperHero.allInstances.forEach(function(entry) {
-		assert.notEqual(entry.power, undefined, "Power Entered for " + entry.superName;
+		assert.notEqual(entry.power, undefined, "Power Entered for " + entry.superName);
 		assert.notEqual(entry.weakness, undefined, "Weakness Entered for " + entry.superName);
 		assert.notEqual(entry.secretName, undefined, "Secret Name Provided for " + entry.superName);
 		assert.notEqual(entry.superName, undefined, "Super Name Provided for " + entry.superName);
