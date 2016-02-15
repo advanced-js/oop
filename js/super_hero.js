@@ -24,7 +24,7 @@ var SuperHero = function(name,heroType) {
 		default:
 			this.power = "complains alot";
 			this.powerLevel = 10;
-	};
+	}
 }; 
  
 SuperHero.prototype.addEnemy = function(enemy) {
@@ -54,7 +54,7 @@ SuperHero.prototype.attack = function(superHero) {
 		lifeUnits = 5;
 	} else {
 		this.addEnemy(superHero.name);
-	};
+	}
 	if ( superHero.lifeForce <= 0 ) {
 		console.log(superHero.name + " is dead!");
 	} else if ( this.powerLevel > superHero.powerLevel ) {
@@ -63,7 +63,7 @@ SuperHero.prototype.attack = function(superHero) {
 	} else if ( this.powerLevel < superHero.powerLevel ) {
 		this.lifeForce-=lifeUnits;
 		console.log(superHero.name + " took " + lifeUnits + " life units from " + this.name);
-	};
+	}
 };
 
 var tamsin = new SuperHero("Tamsin","valkyrie");
