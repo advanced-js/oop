@@ -11,11 +11,11 @@ QUnit.test("damage ability test", function(assert) {
 });
 
 QUnit.test("hit point less than 0", function(assert) {
-  throws(function() { var h = new Superhero('name', 50, -10)}, new Error('Health cannot be less than 0'));
+  throws(function() { var h = new Superhero('name', 50, -10);}, new Error('Health cannot be less than 0'));
 });
 
 QUnit.test("dmg ability less than 0", function(assert) {
-  throws(function() { var h = new Superhero('name', -50, 0)}, new Error('Damage cannot be less than 0'));
+  throws(function() { var h = new Superhero('name', -50, 0);}, new Error('Damage cannot be less than 0'));
 });
 
 QUnit.test("test attack", function(assert) {

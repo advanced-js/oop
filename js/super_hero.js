@@ -14,16 +14,16 @@ var Superhero = function(name, dmgPoints, hitPoints) {
 
 Superhero.prototype.toString = function() {
 	return this.name;
-}
+};
 
 Superhero.prototype.isDead = function() {
 	return this.currentHitPoints <= 0;
-}
+};
 
 Superhero.prototype.revive = function() {
 	this.currentHitPoints = this.hitPoints;
 	console.log(this + ' revived to ' + this.currentHitPoints + ' hit points.');
-}
+};
 
 Superhero.prototype.attack = function(otherHero) {
 	if (otherHero === this) {
@@ -42,7 +42,7 @@ Superhero.prototype.attack = function(otherHero) {
 		console.log(otherHero + ' died.');
 	}
 	return true;
-}
+};
 
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -66,7 +66,8 @@ var hero1,hero2;
 
 while (heroes.length > 1) {
 	shuffleArray(heroes);
-	hero1 = heroes[0], hero2 = heroes[1];
+	hero1 = heroes[0];
+	hero2 = heroes[1];
 	hero1.attack(hero2);
 	if (hero2.isDead()) {
 		heroes.splice(1, 1);
