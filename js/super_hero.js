@@ -36,7 +36,7 @@ SuperHero.prototype.removeEnemy = function(enemy) {
 	if ( index >= 0 ) {
 		this.enemies.splice(index,1);
 	}
-}
+};
 
 SuperHero.prototype.isEnemy = function(enemy) {
 	if ( this.enemies.indexOf(enemy) >= 0 ) {
@@ -44,7 +44,7 @@ SuperHero.prototype.isEnemy = function(enemy) {
 	} else {
 		return false;
 	}
-}
+};
 
 SuperHero.prototype.intro = function() {
 	return "My name is " + this.name + ", and I'm a " + this.heroType;
