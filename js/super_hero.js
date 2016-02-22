@@ -29,65 +29,43 @@ var SuperHero = function(name,heroType) {
  
 SuperHero.prototype.addEnemy = function(enemy) {
 	this.enemies.push(enemy);
-	console.log(enemy + " is an enemy of " + this.name);
 };
 
-SuperHero.prototype.myIntro = function() {
-	console.log("My name is " + this.name + ", and I'm a " + this.heroType);
-};
+SuperHero.prototype.removeEnemy = function(enemy) {
+	var index = this.enemies.indexOf(enemy);
+	if ( index >= 0 ) {
+		this.enemies.splice(index,1);
+	}
+}
 
-SuperHero.prototype.myPower = function() {
-	console.log(this.name + " " + this.power);
-};
+SuperHero.prototype.isEnemy = function(enemy) {
+	if ( this.enemies.indexOf(enemy) >= 0 ) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
-SuperHero.prototype.myLifeForce = function() {
-	console.log(this.name + "'s life force is " + this.lifeForce);
-};
-
-SuperHero.prototype.myEnemies = function() {
-	console.log(this.name + "'s enemies are " + this.enemies);
+SuperHero.prototype.intro = function() {
+	return "My name is " + this.name + ", and I'm a " + this.heroType;
 };
 
 SuperHero.prototype.attack = function(superHero) {
-	var lifeUnits = 2;
-	if ( this.enemies.indexOf(superHero.name) >= 0 ) {
-		lifeUnits = 5;
-	} else {
+	var lifeUnits = 20;
+	if ( this.enemies.indexOf(superHero.name) === -1 ) {
 		this.addEnemy(superHero.name);
 	}
-	if ( superHero.lifeForce <= 0 ) {
-		console.log(superHero.name + " is dead!");
-	} else if ( this.powerLevel > superHero.powerLevel ) {
+	if ( this.powerLevel > superHero.powerLevel ) {
 		superHero.lifeForce-=lifeUnits;
-		console.log(this.name + " took " + lifeUnits + " life units from " + superHero.name);
 	} else if ( this.powerLevel < superHero.powerLevel ) {
 		this.lifeForce-=lifeUnits;
-		console.log(superHero.name + " took " + lifeUnits + " life units from " + this.name);
 	}
 };
 
-var tamsin = new SuperHero("Tamsin","valkyrie");
-tamsin.myIntro();
-var dyson = new SuperHero("Dyson","shape-shifter");
-dyson.myIntro();
-var hale = new SuperHero("Hale","siren");
-hale.myIntro();
-
-var bo = new SuperHero("Bo","succubus");
-bo.myIntro();
-bo.myPower();
-bo.attack(tamsin);
-bo.myEnemies();
-bo.myLifeForce();
-tamsin.myLifeForce();
-
-bo.addEnemy(dyson.name);
-bo.myEnemies();
-bo.attack(dyson);
-bo.myEnemies();
-bo.myLifeForce();
-dyson.myLifeForce();
-
-dyson.attack(tamsin);
-tamsin.myLifeForce();
-dyson.myLifeForce();
+SuperHero.prototype.isAlive = function() {
+	if ( this.lifeForce > 0 ) {
+		return true;
+	} else {
+		return false;
+	}
+};
