@@ -1,4 +1,19 @@
-// var SuperHero = ...
+var SuperHuman = function(name,power) {
+	this.name = name;
+	this.lifeForce = 100;
+	this.power = power;
+	switch (power) {
+		case "has super strength":
+		case "can fly":
+		case "has x-ray vision":
+		case "runs super fast":
+			this.powerLevel = 2;
+			break;
+		default:
+			this.powerLevel = 1;
+	}
+};
+
 var SuperHero = function(name,heroType) { 
 	this.name = name; 
 	this.heroType = heroType;

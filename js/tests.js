@@ -1,16 +1,24 @@
-// QUnit.test("hello test", function(assert) {
-//   assert.strictEqual(1 + 1, 2, "One plus one is two");
-// });
+QUnit.test("SuperHuman basics", function(assert) {
+    var hulk = new SuperHuman("The Incredible Hulk","has super strength");
+    assert.propEqual(hulk,{
+        name:"The Incredible Hulk",
+        lifeForce:100,
+        power:"has super strength",
+        powerLevel:2
+    },"Incredible Hulk is okay");
+
+    var maleficient = new SuperHuman("Maleficient","can fly");
+        assert.propEqual(maleficient,{
+        name:"Maleficient",
+        lifeForce:100,
+        power:"can fly",
+        powerLevel:2
+    },"Maleficient is okay");
+
+    assert.notStrictEqual(hulk,maleficient,"The Incredible Hulk is not Maleficient");
+});
 
 QUnit.test("SuperHero details", function(assert) {
-	// function details(name,heroType,lifeForce,power,powerLevel) {
-	// 	assert.propEqual(this.name,name,"name is okay");
-	// 	assert.strictEqual(this.heroType,heroType,"heroType is okay");
-	// 	assert.strictEqual(this.lifeForce,lifeForce,"lifeForce is okay");
-	// 	assert.strictEqual(this.power,power,"power is okay");
-	// 	assert.strictEqual(this.powerLevel,powerLevel,"powerLevel is okay");
-	// };
-
     var bo = new SuperHero("Bo","succubus");
     assert.propEqual(bo,{
     	name:"Bo",
@@ -20,7 +28,6 @@ QUnit.test("SuperHero details", function(assert) {
     	power:"feeds on the energy of humans",
     	powerLevel:5
     },"Bo is okay");
-    // details.call(bo,"Bo","succubus",100,"feeds on the energy of humans",5);
 
     var tamsin = new SuperHero("Tamsin","valkyrie");
     assert.propEqual(tamsin,{
@@ -31,7 +38,6 @@ QUnit.test("SuperHero details", function(assert) {
     	power:"chooses the slain",
     	powerLevel:4
     },"Tamsin is okay");
-    // details.call(tamsin,"Tamsin","valkyrie",100,"chooses the slain",4);
 
     var dyson = new SuperHero("Dyson","shape-shifter");
     assert.propEqual(dyson,{
@@ -42,7 +48,6 @@ QUnit.test("SuperHero details", function(assert) {
     	power:"changes into a wolf",
     	powerLevel:3
     },"Dyson is okay");
-    // details.call(dyson,"Dyson","shape-shifter",100,"changes into a wolf",3);
 
     var hale = new SuperHero("Hale","siren");
     assert.propEqual(hale,{
@@ -53,7 +58,6 @@ QUnit.test("SuperHero details", function(assert) {
     	power:"has an enchanted voice",
     	powerLevel:2
     },"Hale is okay");
-    // details.call(hale,"Hale","siren",100,"has an enchanted voice",2);
 
  	assert.notStrictEqual(bo,tamsin,"Bo is not Tamsin");
  	assert.notStrictEqual(tamsin,dyson,"Tamsin is not Dyson");
