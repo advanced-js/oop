@@ -14,6 +14,10 @@ var SuperHuman = function(name,power) {
 	}
 };
 
+SuperHuman.prototype.intro = function() {
+	return "My name is " + this.name;
+};
+
 var SuperHero = function(name,heroType) { 
 	this.name = name; 
 	this.heroType = heroType;

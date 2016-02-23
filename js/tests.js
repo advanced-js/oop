@@ -5,7 +5,7 @@ QUnit.test("SuperHuman basics", function(assert) {
         lifeForce:100,
         power:"has super strength",
         powerLevel:2
-    },"Incredible Hulk is okay");
+    },"The Incredible Hulk is okay");
 
     var maleficient = new SuperHuman("Maleficient","can fly");
         assert.propEqual(maleficient,{
@@ -16,6 +16,11 @@ QUnit.test("SuperHuman basics", function(assert) {
     },"Maleficient is okay");
 
     assert.notStrictEqual(hulk,maleficient,"The Incredible Hulk is not Maleficient");
+});
+
+QUnit.test("SuperHuman intro", function(assert) {
+    var hulk = new SuperHuman("The Incredible Hulk","has super strength");
+    assert.strictEqual(hulk.intro(),"My name is The Incredible Hulk","The Incredible Hulk's intro is okay");
 });
 
 QUnit.test("SuperHero details", function(assert) {
