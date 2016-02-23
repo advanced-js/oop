@@ -23,7 +23,7 @@ QUnit.test("SuperHuman intro", function(assert) {
     assert.strictEqual(hulk.intro(),"My name is The Incredible Hulk","The Incredible Hulk's intro is okay");
 });
 
-QUnit.test("SuperHero details", function(assert) {
+QUnit.test("SuperHero basics", function(assert) {
     var bo = new SuperHero("Bo","succubus");
     assert.propEqual(bo,{
     	name:"Bo",
@@ -103,4 +103,63 @@ QUnit.test("SuperHero attack", function(assert) {
 	assert.strictEqual(tamsin.isAlive(),true,"Tamsin is alive");
 	bo.attack(tamsin);
 	assert.strictEqual(tamsin.isAlive(),false,"Tamsin is dead");	
+});
+
+QUnit.test("SuperVillain basics", function(assert) {
+    var frankenstein = new SuperVillain("Frankenstein","monster");
+    assert.propEqual(frankenstein,{
+        name:"Frankenstein",
+        villainType:"monster",
+        lifeForce:100,
+        power:"is a living being created from dead human parts",
+        powerLevel:2,
+        evilFactor:20
+    },"Frankenstein is okay");
+
+    var dracula = new SuperVillain("Dracula","vampire");
+    assert.propEqual(dracula,{
+        name:"Dracula",
+        villainType:"vampire",
+        lifeForce:100,
+        power:"feeds on human blood",
+        powerLevel:2,
+        evilFactor:20
+    },"Dracula is okay");
+
+    var julia = new SuperVillain("Julia","vector");
+    assert.propEqual(julia,{
+        name:"Julia",
+        villainType:"vector",
+        lifeForce:100,
+        power:"is a flesh-eating zombie",
+        powerLevel:3,
+        evilFactor:20
+    },"Julia is okay");
+
+    assert.notStrictEqual(frankenstein,dracula,"Frankenstein is not Dracula");
+    assert.notStrictEqual(dracula,julia,"Dracula is not Julia");
+    assert.notStrictEqual(julia,frankenstein,"Julia is not Frankenstein");
+});
+
+QUnit.test("SuperVillain intro", function(assert) {
+    var julia = new SuperVillain("Julia","vector");
+    assert.strictEqual(julia.intro(),"My name is Julia","Julia's intro is okay");
+});
+
+QUnit.test("SuperVillain/SuperHero attack", function(assert) {
+    var julia = new SuperVillain("Julia","vector");
+    var bo = new SuperHero("Bo","succubus");
+    julia.attack(bo);
+    assert.strictEqual(julia.lifeForce,80,"Julia's life force is 80");
+    assert.strictEqual(bo.lifeForce,90,"Bo's life force is 90");
+    bo.attack(julia);
+    assert.strictEqual(julia.lifeForce,60,"Julia's life force is 60");
+    assert.strictEqual(bo.lifeForce,90,"Bo's life force is 90");
+    julia.attack(bo);
+    assert.strictEqual(julia.lifeForce,40,"Julia's life force is 40");
+    assert.strictEqual(bo.lifeForce,80,"Bo's life force is 80");
+    bo.attack(julia);
+    assert.strictEqual(julia.isAlive(),true,"Julia is alive");
+    bo.attack(julia);
+    assert.strictEqual(julia.isAlive(),false,"Julia is dead");    
 });
