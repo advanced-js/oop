@@ -1,0 +1,16 @@
+#SuperHeroWrapper { 
+    text-align: center;
+}
+
+.superhero { 
+    width: 100px; 
+    height: 500px; 
+    padding: 20px; 
+    color: white; 
+    font-family: helvetica, arial, sans-serif;
+    font-weight: bold; 
+    display: inline-block; 
+    margin: 0 20px; 
+    text-transform: uppercase;
+    vertical-align: bottom;
+}
